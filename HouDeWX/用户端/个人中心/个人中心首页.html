@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+	<link rel="stylesheet" href="../../../HouDeWX/css/xy.css" />
+
+</head>
+
+<body>
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<!--
+			<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			-->
+		<h1 class="mui-center mui-title">个人中心</h1>
+	</div>
+	<div class="mui-content">
+		<div class="mui-card">
+			<div class="user-avatar">
+				<img src="../../img/default-avatar.jpg" />
+			</div>
+			<div class="user-right">
+				<div class="user-nickname">
+					<span>这里是用户的昵称这里是用户的昵称</span>
+					<img href="#" src="../../img/edit_pen.png" />
+				</div>
+				<div class="user-no-vip" style="display:none;">
+					<span>升级为会员享受更多优惠</span>
+					<a href="#">加入会员 ></a>
+				</div>
+				<div class="user-no-vip">
+					<a>充值</a>
+				</div>
+				<div class="user-yh">
+					<div class="user-yh-item">
+						<label>余额(元)</label>
+						<span>1000.00</span>
+					</div>
+					<div class="user-yh-item">
+						<label>优惠券(张)</label>
+						<span>1</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mui-card xy-list">
+			<ul class="xy-ul">
+				<li onclick="location.href='#'">
+					<div class="li-left"><img src="../../img/icon-home-user.png" /><span>家庭成员管理</span></div> <i></i>
+				</li>
+				<li onclick="location.href='#'">
+					<div class="li-left"><img src="../../img/icon-doc.png" /><span>我的医生</span></div> <i></i>
+				</li>
+				<li onclick="location.href='../在线咨询/咨询列表.html'">
+					<div class="li-left"><img src="../../img/icon-docory.png" /><span>我的咨询</span></div> <i></i>
+				</li>
+				<li onclick="location.href='#'">
+					<div class="li-left"><img src="../../img/icon-msg.png" /><span>我的消息</span></div> <i></i>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+		<p>© 2018 All Rights Reserved</p>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script>
+	// TODO 做些什么事
+	$("#head-img").on('click', function (event) {
+		event.stopPropagation();
+		alert("修改头像")
+
+	});
+	$("#jiaoyi").on('click', function (event) {
+		event.stopPropagation();
+		location.href = "账户明细-Index.html";
+	});
+	$("#up-vip").on('click', function (event) {
+		event.stopPropagation();
+		location.href = "升级须知.html"
+	});
+</script>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>健康体检</title>
+	<link href="../../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/pubh.css">
+	<link rel="stylesheet" href="../../css/medica_list.css">
+</head>
+
+<body>
+	<input type="hidden" name="hid_search_leibie_shiyong" id="hid_search_leibie_shiyong" value="0">
+	<input type="hidden" name="hid_search_leibie_zhongdian" id="hid_search_leibie_zhongdian" value="0">
+	<input type="hidden" name="hid_search_zonghe_xingbie" id="hid_search_zonghe_xingbie" value="0">
+	<input type="hidden" name="hid_search_zonghe_jiawei" id="hid_search_zonghe_jiawei" value="0">
+	<!--排序字段，1：销量,2:价格-->
+	<input type="hidden" name="hid_sort_by_word" id="hid_sort_by_word" value="1">
+	<!--排序方式：1：降序，2：升序-->
+	<input type="hidden" name="hid_sort_by_type" id="hid_sort_by_type" value="1">
+
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<h1 class="mui-center mui-title">体检套餐</h1>
+		<a class="mui-icon mui-icon-list mui-pull-right icon-order-list" onclick="javascript:location.href='订单列表.html'"> </a>
+	</div>
+	<!-- 搜索遮罩层 -->
+	<div id="popover_search_type" class="box mui-popover mui-popover-action mui-popover-bottom" style="height: 65%; background-color: #FFF;">
+		<div class="search-fild-box">
+			<label>适用人群</label>
+			<div class="search-fild-span" data-mark="hid_search_leibie_shiyong">
+				<span onclick="setSearchFiled(this)" data-val="1">父母体检</span>
+				<span onclick="setSearchFiled(this)" data-val="2">女性专享</span>
+				<span onclick="setSearchFiled(this)" data-val="3">70后体检</span>
+				<span onclick="setSearchFiled(this)" data-val="4">80后体检</span>
+				<span onclick="setSearchFiled(this)" data-val="5">常规体检</span>
+				<span onclick="setSearchFiled(this)" data-val="6">商务精英</span>
+				<span onclick="setSearchFiled(this)" data-val="7">妇科检查</span>
+				<span onclick="setSearchFiled(this)" data-val="8">入职体检</span>
+				<span onclick="setSearchFiled(this)" data-val="9">孕前检查</span>
+				<span onclick="setSearchFiled(this)" data-val="10">婚前检查</span>
+				<span onclick="setSearchFiled(this)" data-val="11">全面体检</span>
+				<span onclick="setSearchFiled(this)" data-val="12">老年体检</span>
+				<span onclick="setSearchFiled(this)" data-val="13">普通人群</span>
+				<span onclick="setSearchFiled(this)" data-val="14">家政体检</span>
+				<span onclick="setSearchFiled(this)" data-val="15">基因检测</span>
+				<span onclick="setSearchFiled(this)" data-val="16">儿童体检</span>
+			</div>
+		</div>
+		<div class="search-fild-box">
+			<label>重点疾病</label>
+			<div class="search-fild-span" data-mark="hid_search_leibie_zhongdian">
+				<span onclick="setSearchFiled(this)" data-val="1">父母体检</span>
+				<span onclick="setSearchFiled(this)" data-val="2">女性专享</span>
+				<span onclick="setSearchFiled(this)" data-val="3">70后体检</span>
+				<span onclick="setSearchFiled(this)" data-val="4">80后体检</span>
+				<span onclick="setSearchFiled(this)" data-val="5">常规体检</span>
+				<span onclick="setSearchFiled(this)" data-val="6">商务精英</span>
+				<span onclick="setSearchFiled(this)" data-val="7">妇科检查</span>
+				<span onclick="setSearchFiled(this)" data-val="8">入职体检</span>
+				<span onclick="setSearchFiled(this)" data-val="9">孕前检查</span>
+				<span onclick="setSearchFiled(this)" data-val="10">婚前检查</span>
+				<span onclick="setSearchFiled(this)" data-val="11">全面体检</span>
+				<span onclick="setSearchFiled(this)" data-val="12">老年体检</span>
+			</div>
+		</div>
+	</div>
+	<div id="popover_search_zonghe" class="那个、 mui-popover mui-popover-action mui-popover-bottom" style="height: 45%; background-color: #FFF;">
+		<div class="search-fild-box">
+			<label>性别</label>
+			<div class="search-fild-span" data-mark="hid_search_zonghe_xingbie">
+				<span onclick="setSearchFiled(this)" data-val="1">男</span>
+				<span onclick="setSearchFiled(this)" data-val="2">女</span>
+			</div>
+		</div>
+		<div class="search-fild-box">
+			<label>价位</label>
+			<div class="search-fild-span" data-mark="hid_search_zonghe_jiawei">
+				<span onclick="setSearchFiled(this)" data-val="1">300以下</span>
+				<span onclick="setSearchFiled(this)" data-val="2">300-800</span>
+				<span onclick="setSearchFiled(this)" data-val="3">300-800</span>
+				<span onclick="setSearchFiled(this)" data-val="4">800-1500</span>
+				<span onclick="setSearchFiled(this)" data-val="5">1500-2500</span>
+				<span onclick="setSearchFiled(this)" data-val="6">2500以上</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="mui-content">
+		<div class="search-bar">
+			<a class="search-type" href="#popover_search_type">
+				类别
+				<i class="jiantou sanjiao-shixin"></i>
+			</a>
+			<a class="orderby-xiaoliang kongxin-active" onclick="setOrderBy(1)">
+				销量
+				<i class="jiantou sanjiao-kongxin"></i>
+			</a>
+			<a class="orderby-jiage" onclick="setOrderBy(2)">
+				价格
+				<i class="jiantou sanjiao-kongxin sanjiao-kongxin-up"></i>
+			</a>
+			<a class="search-zonghe" href="#popover_search_zonghe">
+				综合
+				<i class="jiantou sanjiao-shixin"></i>
+			</a>
+		</div>
+
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper custom-pullrefresh">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron medical-list" id="ul_data_list" template-id="template_list"
+				 pageIndex="1">
+					<li class="mui-table-view-cell" data-link="">
+						<img src="../../img/icon-medical.png">
+						<div class="medical-item">
+							<span class="medical-title">男性基础套餐</span>
+							<div>
+								<div>
+									<label>优惠价格:</label>
+									<span>￥3518.00</span>
+								</div>
+								<span class="medical-old_price">原价:￥3756.97</span>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" data-link="">
+						<img src="../../img/icon-medical.png">
+						<div class="medical-item">
+							<span class="medical-title">男性基础套餐</span>
+							<div>
+								<div>
+									<label>优惠价格:</label>
+									<span>￥3518.00</span>
+								</div>
+								<span class="medical-old_price">原价:￥3756.97</span>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" data-link="">
+						<img src="../../img/icon-medical.png">
+						<div class="medical-item">
+							<span class="medical-title">男性基础套餐</span>
+							<div>
+								<div>
+									<label>优惠价格:</label>
+									<span>￥3518.00</span>
+								</div>
+								<span class="medical-old_price">原价:￥3756.97</span>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" data-link="">
+						<img src="../../img/icon-medical.png">
+						<div class="medical-item">
+							<span class="medical-title">男性基础套餐</span>
+							<div>
+								<div>
+									<label>优惠价格:</label>
+									<span>￥3518.00</span>
+								</div>
+								<span class="medical-old_price">原价:￥3756.97</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div id="div_nomore" class="mui-center" style="display:none;text-align:center;margin-top:20px;">没有更多数据了</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/template-web.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+	var pageSize = 14;
+	var totalPage; //总页码
+	mui.init({
+		pullRefresh: {
+			container: '#pullrefresh',
+			down: {
+				auto: true,//可选,默认false.首次加载自动上拉刷新一次
+				callback: pulldownRefresh
+			},
+			// up: {
+			//     contentrefresh: '正在加载...',
+			//     callback: pullupRefresh
+			// }
+		}
+	});
+	/**
+    * 下拉刷新具体业务实现
+    */
+	function pulldownRefresh() {
+		mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+		return;
+		$('#ul_data_list').attr('pageIndex', 1);
+		Ajax_Load_Pullrefresh_Data(true, "ul_data_list");
+	}
+
+	function Ajax_Load_Pullrefresh_Data(reload, ul_id) {
+		var ul_page_index = parseInt($('#' + ul_id).attr('pageIndex'));
+		if (ul_page_index == 0) ul_page_index = 1;
+		var idnmber = $("#hid_idnumber").val();
+		unBindTap();
+		mui.ajax({
+			url: "http://shop.model-me.cn/uploads/video_list.json",
+			data: {
+				"page_size": pageSize,
+				"page_index": ul_page_index,
+				"id_number": idnmber
+			},
+			dataType: 'json', //服务器返回json格式数据
+			type: 'post', //HTTP请求类型
+			//async:false,//同步请求
+			timeout: 10000, //超时时间设置为10秒
+			success: function (res) {
+				//异常处理；
+				mui('#pullrefresh').pullRefresh().refresh(true);
+				if (reload) {
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+				}
+				mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+				mui.toast('获取数据失败，请检查网络连接');
+			},
+			error: function (xhr, type, errorThrown) {
+				mui('#pullrefresh').pullRefresh().refresh(true);
+				//临时用本地文件填充
+				var res = json_data;
+
+				if (res.msg == -1) {
+					mui.alert("提示", res.msgbox);
+				} else if (res.msg == 0) {
+					if (reload) {
+						mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+					}
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+					mui.alert("提示", res.msgbox);
+				} else {
+					$('#' + ul_id).attr('pageIndex', parseInt(ul_page_index) + 1);
+					// if (res.total == 0) {
+					//     mui.toast("没有数据");
+					//     if (reload) {
+					//         mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+					//     }
+					//     mui('#pullrefresh').pullRefresh().endPullupToRefresh(false);
+					//     return;
+					// }
+					//取返回的数据
+					var html = template($('#' + ul_id).attr('template-id'), res);
+					//最大页数
+					totalPage = res.total % pageSize != 0 ? parseInt(res.total / pageSize) + 1 : res.total / pageSize;
+
+					if (res.data.length == 0) {
+						$(".mui-pull-bottom-pocket").removeClass("mui-visibility");
+						$("#div_nomore").show();
+					} else {
+						$("#div_nomore").hide();
+					}
+					if (reload) {
+						//覆盖数据                            
+						$('#' + ul_id).html(html);
+						mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+						$(".mui-pull-top-pocket").removeClass("mui-visibility");
+					} else {
+						//追加数据
+						$('#' + ul_id).append(html);
+					}
+
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(totalPage <= ul_page_index);
+
+					//绑定li点击事件
+					bindTap();
+				}
+
+			}
+		});
+	};
+
+	//取消绑定点击事件
+	function unBindTap() {
+		mui('.mui-table-view').off('tap', 'li');
+	}
+
+	//绑定点击事件
+	function bindTap() {
+		mui('.mui-table-view').on('tap', 'li', function (e) {
+			window.open(this.getAttribute("data-link"));
+		});
+	}
+
+	//类别筛选-显示事件
+	document.getElementById('popover_search_type').addEventListener('shown', function (e) {
+		$(".search-type").addClass("shixin-active");
+
+
+	});
+	//类别筛选-关闭事件
+	document.getElementById('popover_search_type').addEventListener('hidden', function (e) {
+		var hid_search_leibie_shiyong = $("#hid_search_leibie_shiyong").val()
+		var hid_search_leibie_zhongdian = $("#hid_search_leibie_zhongdian").val();
+		if (hid_search_leibie_shiyong != 0 || hid_search_leibie_zhongdian != 0) {
+			//不去掉按钮的选中效果
+		} else {
+			$(".search-type").removeClass("shixin-active");
+		}
+	});
+	//综合筛选-显示事件
+	document.getElementById('popover_search_zonghe').addEventListener('shown', function (e) {
+		$(".search-zonghe").addClass("shixin-active");
+	});
+	//综合筛选-关闭事件
+	document.getElementById('popover_search_zonghe').addEventListener('hidden', function (e) {
+		var hid_search_zonghe_jiawei = $("#hid_search_zonghe_jiawei").val()
+		var hid_search_zonghe_xingbie = $("#hid_search_zonghe_xingbie").val();
+		if (hid_search_zonghe_jiawei != 0 || hid_search_zonghe_xingbie != 0) {
+			//不去掉按钮的选中效果
+		} else {
+			$(".search-zonghe").removeClass("shixin-active");
+		}
+	});
+	//排序按钮点击设置
+	function setOrderBy(type) {
+		//要显示的
+		var ele_class = type == 1 ? "orderby-xiaoliang" : "orderby-jiage";
+		//要隐藏的
+		var ele_dis_class = type == 1 ? "orderby-jiage" : "orderby-xiaoliang";
+		//设置排序字段
+		$("#hid_sort_by_word").val(type);
+		//先把另一个排序设置为默认状态
+		$("." + ele_dis_class).removeClass("kongxin-active");
+		$("." + ele_dis_class).find("i").removeClass("sanjiao-kongxin-up");
+
+		if ($("." + ele_class).hasClass("kongxin-active")) {
+			//如果该元素是选中状态
+			if ($("." + ele_class).find("i").hasClass("sanjiao-kongxin-up")) {
+				//如果箭头是往上的,则置为往下的
+				$("." + ele_class).find("i").removeClass("sanjiao-kongxin-up")
+				//降序排列
+				$("#hid_sort_by_type").val("1");
+			} else {
+				$("." + ele_class).find("i").addClass("sanjiao-kongxin-up")
+				//升序排列
+				$("#hid_sort_by_type").val("2");
+			}
+		} else {
+			//如果该元素不是选中状态
+			$("." + ele_class).addClass("kongxin-active");
+			$("." + ele_class).find("i").removeClass("sanjiao-kongxin-up");
+			//默认降序排列
+			$("#hid_sort_by_type").val("1");
+		}
+
+		console.log($("#hid_sort_by_word").val()+"----"+$("#hid_sort_by_type").val());		
+	}
+	//筛选点击设置
+	function setSearchFiled(obj) {
+		var hid_id = $(obj).parent().attr("data-mark");
+		$.each($(obj).parent().children("span"), function (indexInArray, valueOfElement) {
+			if ($(this).attr("data-val") != $(obj).attr("data-val")) {
+				$(this).removeClass("search-fild-span-active");
+			}
+		});
+
+		if ($(obj).hasClass("search-fild-span-active")) {
+			$(obj).removeClass("search-fild-span-active");
+			$("#" + hid_id).val("0");
+		} else {
+			$(obj).addClass("search-fild-span-active");
+			$("#" + hid_id).val($(obj).attr("data-val"));
+		}
+	}
+
+
+	var json_data = {
+		"msg": 1,
+		"msgbox": "ok",
+		"data": [
+			{
+				"id": 1,
+				"is_done": false,
+				"video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+				"video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+				"is_timeout": false,
+				"title": "正在生成中",
+				"add_time": "\/Date(1538995104777)\/"
+			},
+			{
+				"id": 2,
+				"is_done": true,
+				"video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+				"video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+				"is_timeout": true,
+				"title": "这个视频已经过期了",
+				"add_time": "\/Date(1538995104777)\/"
+			},
+			{
+				"id": 3,
+				"is_done": true,
+				"video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+				"video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+				"is_timeout": false,
+				"title": "英雄联盟",
+				"add_time": "\/Date(1538995104777)\/"
+			},
+			{
+				"id": 4,
+				"is_done": true,
+				"video_src": "http://shop.model-me.cn/uploads/queuef/33d5c2fbabb314e526065ca2cd6d45d1.mp4",
+				"video_img": "http://shop.model-me.cn/uploads/queuef/979e81eb48e44cf6adc0c1c5a1e85704.jpg",
+				"is_timeout": false,
+				"title": "为世界杯打CALL",
+				"add_time": "\/Date(1538994595097)\/"
+			}
+		],
+		"total": 4
+	};
+
+
+</script>
+
+</html>

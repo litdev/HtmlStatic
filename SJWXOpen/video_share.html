@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分享给朋友</title>
+    <style>
+        body{
+            background-color:#efeff4;
+        }
+        .share-box{
+            display: flex;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+        }
+        .share-box img{
+            width: 90%;
+            height: 45px;
+        }
+        .share-box span{
+            margin: 15% 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.75);
+        }
+        .share-box video{
+            width: 98%;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="share-box">
+        <img src="img/share_top.png" alt="">
+        <span>视频名称</span>
+        <video loop playsinline autoplay="autoplay"  id="myVideo2" style="z-index:-1" width="100%" height="200" x5-playsinline="true"
+            -webkit-playsinline="true" webkit-playsinline="true" controls="controls" src="http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4"
+            poster="http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg" type="video/mp4">
+        </video>
+
+    </div>
+</body>
+
+</html>

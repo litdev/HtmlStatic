@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<style>
+			.status-text{
+				margin-top: 10px;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				line-height: 60px;
+			}
+			.status-text p{
+				font-size: 20px;
+			}
+			.p2{
+				margin-top: -30px;
+				font-size: 24px;
+			}
+			.money{
+				color: #F5A623;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='个人中心首页.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">支付结果</h1>
+		</div>
+		
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="status-text">
+					<img src="../../img/icon-ok-big.png" style="height: 100px;width: 100px;" /> 
+					<p>成功支付<span class="money">￥1000</span> 元</p>
+					<p class="p2">张医生会及时给您回复</p>
+				</div>
+				<p style="text-align: center;" onclick="javascript:location.href='咨询列表.html'"><span>3</span>秒后前往咨询历史</p>
+			</div>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+				
+	</body>
+
+</html>

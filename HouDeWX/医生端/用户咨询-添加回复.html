@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>			
+			.upload-album {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.upload-album li {
+				float: left;
+				margin: 5px;
+				position: relative;
+			}
+			
+			.upload-album li img {
+				width: 92px;
+				height: 92px;
+			}
+			
+			.upload-album li i {
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url(../img/icon-cancel.png) no-repeat;
+				background-size: 24px 24px;
+				position: absolute;
+				top: 2px;
+				right: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='用户咨询详情.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">回复:HelloWorld</h1>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<label>内容:</label>
+						<textarea id="txt_remark" data-maxNumber="100" cols="50" rows="5" style="margin-top: 10px;" placeholder="输入回复的内容"></textarea>
+					</li>
+					<li class="mui-table-view-cell">
+						<label>添加录音</label>
+						<div class="upload-voice">
+							<div class="upload-voice-start">
+								<button type="button" id="btn_voice_start_record" class="mui-btn-success mui-btn-outlined" style="margin:20px 5px;">开始录音</button>
+								<button type="button" id="btn_voice_stop_record" class="mui-btn-warning mui-btn-outlined" style="margin:20px 2px;">停止录音</button>
+							</div>
+
+							<div class="upload-voice-play">
+								<button type="button" id="btn_voice_play" class="mui-btn-success mui-btn-outlined" style="margin:20px 5px;">播放录音</button>
+								<button type="button" id="btn_voice_pause" class="mui-btn-warning mui-btn-outlined" style="margin:20px 2px;">暂停录音</button>
+								<button type="button" id="btn_voice_stop" class="mui-btn-danger mui-btn-outlined" style="margin:20px 2px;">停止播放录音</button>
+							</div>
+						</div>
+
+					</li>
+					<li class="mui-table-view-cell">
+						<label>图片上传</label>
+						<ul class="upload-album">
+							<li><img src="../img/demo/tel-1.jpg" /><i /></li>
+							<li><img src="../img/demo/tel-1.jpg" /><i /></li>
+							<li><img src="../img/demo/tel-1.jpg" /><i /></li>
+							<li class="upload-album-add"><img src="../img/upload-add.png" /> </li>
+						</ul>
+					</li>
+				</ul>
+				<button type="button" id="btn_save" onclick="location.href='用户咨询详情.html'" data-loading-text="保存中" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary mui-btn-block" style="margin-top: 20px;">保   存</button>
+			</div>
+			<div class="mui-bar-footer mui-text-center" style="width: 100%;">
+				<p>© 2018 All Rights Reserved</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.limitTextarea.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/mui.ext.loading.js"></script>
+	<script>
+		$(function() {
+			$('#txt_remark').limitTextarea({
+				maxNumber: parseInt($('#txt_remark').attr('data-maxNumber')), //最大字数
+				position: 'bottom', //提示文字的位置，top：文本框上方，bottom：文本框下方
+				onOk: function() {
+					$('#txt_remark').css('background-color', 'white');
+					console.log('启用提交按钮')
+				}, //输入后，字数未超出时调用的函数
+				onOver: function() {
+					$('#txt_remark').css('background-color', 'lightpink');
+					console.log('禁用提交按钮')
+				} //输入后，字数超出时调用的函数，这里把文本区域的背景变为粉红色   
+			});
+		});
+	</script>
+
+</html>

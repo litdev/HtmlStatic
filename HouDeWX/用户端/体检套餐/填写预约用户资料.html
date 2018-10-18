@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pubh.css">
+		<link rel="stylesheet" type="text/css" href="../../css/mui.dtpicker.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/mui.ext.loading.css" />
+		<style type="text/css">
+			.radio_inline {
+				display: inline-block;
+				width: 65%;
+			}
+			
+			.radio_inline label {
+				width: 20%;
+				padding-left: 40px;
+				padding-right: 40px;
+			}
+			
+			.radio_inline input[type=radio] {
+				width: 15%;
+				right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='套餐下单.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">填写预约信息</h1>
+		</div>
+		
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<p>请仔细填写以下内容</p>
+				<div class="mui-input-group">
+					<div class="mui-input-row">
+						<label>姓名</label>
+						<input type="text" class="mui-input-clear" name="text_name" id="text_name" value="" placeholder="请输入您的真实姓名" />
+					</div>
+					<div class="mui-input-row">
+						<label>身份证号</label>
+						<input type="text" class="mui-input-clear" name="text_cid" id="text_cid" value="" placeholder="18位身份证编码" />
+					</div>
+					<div class="mui-input-row">
+						<label>手机号</label>
+						<input type="text" class="mui-input-clear" name="text_tel" id="text_tel" value="" placeholder="联系手机号" />
+					</div>
+					<div class="mui-input-row ">
+						<label>性别</label>
+						<span class="radio_inline mui-radio">
+                            <input name="rd_gender" type="radio" id="radio_man" checked value="1">
+                            <label for="radio_man">男</label>
+                            <input name="rd_gender" type="radio" id="radio_woman" value="0">     
+                            <label for="radio_woman">女</label>        
+                        </span>
+					</div>
+					
+					<div id="" class="mui-input-row">
+						<label>体检日期</label>
+						<input type="text" data-options='{"type":"date","beginYear":2014,"endYear":2016}' name="text_time" id="text_time" readonly="readonly" value="" placeholder="点击选择体检日期" />
+					</div>
+
+				</div>
+				<button type="button" id="btn_save" data-loading-text="保存中" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary mui-btn-block" style="margin-top: 20px;">确认并前往支付</button>
+			</div>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.dtpicker.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
+	<script type="text/javascript" src="../../js/mui.ext.loading.js"></script>
+	<script type="text/javascript">
+		(function($$) {
+			$$.init();
+			$$("#btn_save")[0].addEventListener('tap', function() {
+				var btn = this;
+				console.log("姓名：" + $("#text_name").val());
+				console.log("身份证号：" + $("#text_cid").val());
+				console.log("手机号：" + $("#text_tel").val());
+				console.log("性别：" + $("input[name='rd_gender']:checked").val());
+				$$(btn).button('loading');
+				$$.showLoading("保存中", "div");
+
+				setTimeout(function() {
+					$$(btn).button('reset');
+					$$.hideLoading();
+					location.href='订单支付.html';
+				}.bind(btn), 2000);
+			});
+			$$("#text_time")[0].addEventListener('tap', function() {
+				var _self = this;
+				if(_self.picker) {
+					_self.picker.show(function(rs) {
+						console.log('选择结果: ' + rs.text);
+						_self.picker.dispose();
+						_self.picker = null;
+					});
+				} else {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('id');
+					_self.picker = new $$.DtPicker(options);
+					_self.picker.show(function(rs) {
+						_self.value = rs.text;
+						_self.picker.dispose();
+						_self.picker = null;
+					});
+				}
+			})
+		})(mui);
+	</script>
+
+</html>

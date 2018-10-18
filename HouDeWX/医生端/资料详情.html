@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			textarea.noscrollbars {
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='个人中心首页.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">个人资料</h1>
+			<button type="button" onclick="location.href='资料修改.html'" class="mui-right mui-btn  mui-btn-link mui-btn-nav mui-pull-right">
+					修改
+			</button>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<p>基本资料</p>
+				<div class="mui-input-group">
+					<div class="mui-input-row">
+						<label>姓名</label>
+						<input type="text" readonly="readonly" value="张医生" />
+					</div>
+					<div class="mui-input-row">
+						<label>身份证号</label>
+						<input type="text" readonly="readonly" value="41282819930510151X" />
+					</div>
+					<div class="mui-input-row">
+						<label>手机号</label>
+						<input type="text" readonly="readonly" value="17688700150" />
+					</div>
+					<div class="mui-input-row ">
+						<label>性别</label>
+						<input type="text" readonly="readonly" value="男" />
+					</div>
+
+				</div>
+
+				<p style="margin-top: 10px;">专业资料</p>
+				<div class="mui-input-group">
+					<div class="mui-input-row">
+						<label>科室</label>
+						<input type="text" readonly="readonly" value="内科" />
+					</div>
+					<div class="mui-input-row">
+						<label>头衔</label>
+						<input type="text" readonly="readonly" value="主治医师" />
+					</div>
+					<div class="mui-input-row">
+						<label>擅长</label>
+						<input type="text" readonly="readonly" value="少儿 哮喘 内科" />
+					</div>
+					<div class="mui-input-row" id="div_textarea" style="height: 100px;">
+						<label>简介</label>
+						<textarea id="txt_remark" readonly="readonly" class="noscrollbars" onkeyup="autoGrow(this);">这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介这里是医生个人简介</textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="mui-bar-footer mui-text-center" style="width: 100%;">
+				<p>© 2018 All Rights Reserved</p>
+			</div>
+		</div>
+
+	</body>
+	<script>
+		window.onload = function() {
+			autoGrow(document.getElementById('txt_remark'));
+		};
+
+		function autoGrow(oField) {
+			var div_area = document.getElementById('div_textarea');
+			if(oField.scrollHeight > oField.clientHeight) {
+				var new_height = oField.scrollHeight + "px";
+				oField.style.height = new_height;
+				div_area.style.height = new_height;
+			}
+		}
+	</script>
+
+</html>

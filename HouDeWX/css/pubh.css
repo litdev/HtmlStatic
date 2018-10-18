@@ -1,0 +1,7 @@
+﻿body { color: #000000; }
+.mui-bar { background-color: #00B9EF; }
+.mui-title { color: #FFFFFF; }
+.mui-bar .mui-btn-link { color: #FFFFFF; }
+span.mui-icon { color: #fff; }
+.mui-content > .mui-card:first-child { margin-top: 10px; }
+.mui-btn-block { border: none; background-color: #00B9EF ;}

@@ -1,0 +1,39 @@
+.mui-table-view {
+	margin-top: 20px;
+}
+
+.head-img {
+	width: 90px;
+	height: 90px;
+}
+.user-info{
+	margin-left: 100px;
+	
+}
+.user-nickname{
+	height: 32px;
+	width: 150px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.user-nickname span{
+	width: 130px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.user-nickname img{	
+	width: 40px;
+	height: 32px;
+	
+}
+.user-qb{
+	height: 50px;
+	margin-top: 4px;
+}
+.user-qb p{
+	width: 150px;
+}
+.user-qb button{
+	
+}

@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.ext.loading.css" />
+		<link rel="stylesheet" href="../css/public.css" />
+		<style>
+			
+			.head-img {
+				width: 90px !important;
+				height: 90px;
+			}
+			
+			.user-info {
+				margin-left: 100px;
+			}
+			
+			.user-nickname {
+				height: 32px;
+				width: 150px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			
+			.user-nickname span {
+				width: 130px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.user-nickname img {
+				width: 40px;
+				height: 32px;
+			}
+			
+			.user-qb {
+				height: 50px;
+				margin-top: 4px;
+			}
+			.mui-control-item{
+				width: 50% !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="location.href='个人中心首页.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">用户咨询列表</h1>
+			
+		</div>
+
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll slidertab">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							进行中
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							已关闭
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+                                	作者：litdev@outlook.com
+                                	时间：2018-03-29
+                                	描述：pageIndex：当前选项卡加载到第几页数据
+                                		  dataTotal:接口返回的总数据
+                                		  template-id: 使用的模板ID
+                                		  ajaxUrl: 请求URL
+                                -->
+								<ul class="mui-table-view" id="ul_doing" pageIndex='1' dataTotal='' template-id="template_doing" ajaxUrl="http://shop.model-me.cn/wxopen/VideoList?id=2">
+																		
+                                    	<script type="text/html" id="template_doing">
+										{{each info}}
+										
+									<li class="mui-table-view-cell">
+										<a class="mui-navigate-right li-a" href="用户咨询详情.html">
+											<img class="mui-pull-left head-img" id="head-img" src="../img/default-avatar.jpg">
+											<div class="user-info">
+												<div class="user-nickname">
+													<span>{{$value.name}}</span>
+													<label>{{$value.gender}}&nbsp; {{$value.age}}岁</label>
+												</div>
+												<div class="user-qb">
+													<p class='mui-ellipsis'>最新回复时间：{{$value.time}}</p>
+													<p class="mui-ellipsis">
+														{{if $value.is_doc}}
+														我说
+														{{else}}
+														Ta说
+														{{/if}}
+														:{{$value.desc}}</p>
+												</div>
+											</div>
+										</a>
+									</li>	
+										
+										{{/each}}
+									</script>
+                                    	
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="ul_close" pageIndex='1' dataTotal='' template-id="template_close" ajaxUrl="http://shop.model-me.cn/wxopen/VideoList?id=2">
+									
+                                    	<script type="text/html" id="template_close">                                	
+								     	{{each info}}
+								     	<li class="mui-table-view-cell">
+								     		【已关闭】索引：{{$index + 1}},姓名：{{$value.name}},年龄：{{$value.age}}
+								     	</li>
+								     	{{/each}}							     	
+									</script>
+                                    
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+</body>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js "></script>
+		<script type="text/javascript" src="../js/mui.ext.loading.js"></script>
+		<script type="text/javascript" src="../js/template-web.js"></script>
+		<script type="text/javascript" src="../js/public.js" ></script>
+		<script>
+			mui.init();
+			(function($$) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				var pageSize = 2;
+				var count = 0;
+				$$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				//滑动数据初始化
+				document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+					var ul = $('.mui-slider').find('.mui-slider-group').find('.mui-slider-item').eq(event.detail.slideNumber).find('.mui-table-view');
+					var pageIndex = ul.attr('pageIndex');					
+					if(pageIndex == '1') {
+						var template_id = ul.attr('template-id');
+						var ajaxUrl = ul.attr('ajaxUrl');
+						var ul_id = ul.attr('id');
+						var params_data ={"pageIndex":parseInt(pageIndex),"PageSize":pageSize};
+						Ajax_Load_Pullrefresh_Data(true,ajaxUrl,params_data,ul_id,template_id,pageIndex,pageSize);
+						$$('body').on('tap','a',function(){document.location.href=this.href;});
+					}
+				});
+				$$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					$$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						//加载第一个数据
+						if(index == '0') {
+							var ul = this.querySelector('.mui-table-view');
+							var pageIndex = ul.getAttribute('pageIndex');
+							var template_id = ul.getAttribute('template-id');
+							var ul_id = ul.getAttribute('id');
+							if(pageIndex == '1') {
+								var ajaxUrl = ul.getAttribute('ajaxUrl');
+								var ul_id = ul.getAttribute('id');
+								var params_data ={"pageIndex":parseInt(pageIndex),"PageSize":pageSize};
+								Ajax_Load_Pullrefresh_Data(true,ajaxUrl,params_data,ul_id,template_id,pageIndex,pageSize);
+								$$('body').on('tap','a',function(){document.location.href=this.href;});
+							}
+						}
+
+						$$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									console.log('下拉刷新')
+									var self = this;
+									var self = this;
+									var ul = self.element.querySelector('.mui-table-view');
+									var pageIndex = ul.getAttribute('pageIndex');
+									var template_id = ul.getAttribute('template-id');
+									var ajaxUrl = ul.getAttribute('ajaxUrl');
+									var ul_id = ul.getAttribute('id');
+									var params_data ={"pageIndex":parseInt(pageIndex),"PageSize":pageSize};
+									Ajax_Load_Pullrefresh_Data(true,ajaxUrl,params_data,ul_id,template_id,pageIndex,pageSize)
+									$$('body').on('tap','a',function(){document.location.href=this.href;});
+									self.endPullDownToRefresh();
+									
+								}
+							},
+							up: {
+								contentrefresh: '正在加载...',
+								contentnomore: '没有更多数据了',
+								callback: function() {
+									console.log('上拉加载数据')
+									var self = this;
+									var ul = self.element.querySelector('.mui-table-view');
+									var pageIndex = ul.getAttribute('pageIndex');
+									var template_id = ul.getAttribute('template-id');
+									var ajaxUrl = ul.getAttribute('ajaxUrl');									
+									var ul_id = ul.getAttribute('id');	
+									var params_data ={"pageIndex":parseInt(pageIndex),"PageSize":pageSize};
+									Ajax_Load_Pullrefresh_Data(false,ajaxUrl,params_data,ul_id,template_id,pageIndex,pageSize)
+									var data_total = ul.getAttribute('dataTotal');
+									var pullSize = data_total / 2;
+									self.endPullUpToRefresh(++count > pullSize);
+									$$('body').on('tap','a',function(){document.location.href=this.href;});
+								}
+							}
+						});
+					});
+				});
+			})(mui);
+
+			var template_data = {
+				info: [{
+						name: "刘强 ",
+						age: 23,
+						gender:"男",
+						is_doc:false,
+						desc:"张医生啊，这可咋整啊",
+						time:"2018-03-25 22:32"
+					},
+					{
+						name: "黄冲冲 ",
+						age: 26,
+						gender:"女",
+						is_doc:true,
+						desc:"这位朋友不要激动，抽根烟压压惊先",
+						time:"2018-03-23 12:22"
+					},
+					{
+						name: "熊斌 ",
+						age: 22,
+						gender:"男",
+						is_doc:false,
+						desc:"张医生啊，你帮我看看咋回事",
+						time:"2018-04-02 09:14"
+					}
+				]
+			};			
+			
+		</script>
+
+</html>

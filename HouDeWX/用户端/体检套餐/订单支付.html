@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pubh.css">
+		<style>
+			h4{
+				color: #F5A623;
+				text-align: center;
+			}
+			.mui-radio img{
+				    position: absolute;
+    top: 4px;
+    right: 20px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    outline: 0!important;
+    background-color: transparent;
+    -webkit-appearance: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='套餐下单.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">订单支付</h1>
+		</div>
+		
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="mui-card">
+					<div class="mui-card-header">订单金额：</div>
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<h4>￥ 1000.00</h4>
+						</div>
+					</div>
+					<div class="mui-card-footer">订单号:34245345434532</div>
+				</div>
+				<p>支付方式：</p>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<div class="mui-input-row mui-radio mui-left">
+								<label for="rd_yue">账户余额 <span style="font-size: 12px; color: rgba(0,0,0,0.5);">可用余额:<span style="font-size:12px;color:red;">0.12<span></span></label>
+								<input  name="rd_pay" value="2" id="rd_yue" type="radio">
+								
+							</div> 
+						</div>
+					</div>					
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<div class="mui-input-row mui-radio mui-left">
+								<label for="rd_online">在线微信支付</label>
+								<input name="rd_pay" value="1" checked id="rd_online" type="radio">
+								<img src="../../img/wxpay.png" />
+							</div> 
+						</div>
+						
+					</div>					
+				</div>
+				<!--
+                	作者：litdev@outlook.com
+                	时间：2018-05-16
+                	描述：
+                	onclick="location.href='订单支付完毕.html'" 
+                -->
+				<button type="button" id="btn_save" class="mui-btn mui-btn-warning mui-btn-block" style="margin-top: 20px;">立即支付</button>
+			</div>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			(function($$) {
+				$$.init();
+				$$("#btn_save")[0].addEventListener('tap', function() {
+					var btn = this;
+					var res = getRadioRes('rd_pay');
+				    if(res == null){mui.toast('请选择'); return;}
+				    mui.toast(res);
+				});
+			})(mui);
+			
+			function getRadioRes(name){
+			    var rdsObj = document.getElementsByName(name);
+			    var checkVal = null;
+			    for(i = 0; i < rdsObj.length; i++){
+			        if(rdsObj[i].checked){checkVal = rdsObj[i].value;}
+			    }
+			    return checkVal;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/swiper-4.2.0.min.css" />
+		<style>
+			.bbs-msg-left {
+				display: flex;
+				justify-content: center;
+				flex-direction: row;
+			}
+			
+			.bbs-msg-left-headimg {
+				width: 80px;
+				height: 80px;
+			}
+			
+			.bbs-msg-left-content {
+				margin-left: 10px;
+			}
+			.bbs-msg-left-content p{
+				font-size: 16px !important;
+			}
+			
+			.bbs-msg-left-album {
+				margin: 1em 0;
+				height: 50px;
+				overflow: hidden;
+			}
+			
+			.bbs-msg-left-album img {
+				width: 60px;
+				float: left;
+				margin-right: 10px;
+				display: block;
+			}
+			
+			#origin-img {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #000;
+			}
+			
+			#origin-img .swiper-slide img {
+				width: 100%;
+				vertical-align: middle;
+			}
+			
+			.swiper-pagination {
+				top: 6em;
+				bottom: auto;
+				color: #fff;
+			}
+			audio::-webkit-media-controls { overflow: hidden !important }
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='用户咨询列表.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">用户咨询详情</h1>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../img/demo/tel-1.jpg" />
+									<img src="../img/demo/tel-2.jpg" />
+									<img src="../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<img class="bbs-msg-left-headimg" src="../img/default-avatar.jpg" />
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+				</ul>
+				
+				<button type="button" onclick="location.href='用户咨询-添加回复.html'" class="mui-btn mui-btn-primary mui-btn-block" style="margin-top: 20px;">继续回复</button>
+				
+			</div>
+			<div class="mui-bar-footer mui-text-center" style="width: 100%;">
+				<p>© 2018 All Rights Reserved</p>
+			</div>
+		</div>
+
+		<div class="swiper-container" id="origin-img">
+			<div class="swiper-wrapper"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/swiper-4.2.0.min.js"></script>
+	<script>
+		var swiperStatus = false;
+		imgsdata = {
+			"list1": ["../img/demo/tel-1.jpg", "../img/demo/tel-2.jpg", "../img/demo/tel-3.jpg"],
+			"list2": ["b2_1.jpg", "b2_2.jpg"],
+			"list3": ["b3_1.jpg"],
+		}
+
+		var swiper = new Swiper('.swiper-container', {
+			zoom: true,
+			width: window.innerWidth,
+			virtual: true,
+			spaceBetween: 20,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+			},
+			on: {
+				click: function() {
+					$('#origin-img').fadeOut('fast');
+					this.virtual.slides.length = 0;
+					this.virtual.cache = [];
+					swiperStatus = false;
+
+				},
+			},
+
+		});
+
+		$('.bbs-msg-left-album img').click(function() {
+			clickIndex = $(this).index();
+
+			imglist = $(this).parent().attr('thumblist');
+			imgs = imgsdata[imglist];
+			for(i = 0; i < imgs.length; i++) {
+				swiper.virtual.appendSlide('<div class="swiper-zoom-container"><img src="' + imgs[i] + '" /></div>');
+			}
+			swiper.slideTo(clickIndex);
+			$('#origin-img').fadeIn('fast');
+			swiperStatus = true;
+
+		})
+
+		//切换图状态禁止页面缩放	
+		document.addEventListener('touchstart', function(event) {
+			if(event.touches.length > 1 && swiperStatus) {
+				event.preventDefault();
+			}
+		})
+		var lastTouchEnd = 0;
+		document.addEventListener('touchend', function(event) {
+			var now = (new Date()).getTime();
+			if(now - lastTouchEnd <= 300) {
+				event.preventDefault();
+			}
+			lastTouchEnd = now;
+		}, false)
+
+		document.addEventListener('touchmove', function(e) {
+			if(swiperStatus) {
+				e.preventDefault();
+			}
+		})
+	</script>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>医学通识</title>
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<style>
+		.mui-content {
+			background-color: #FFFFFF !important;
+		}
+
+		body {
+			background-color: #FFFFFF !important;
+		}
+
+		.mui-slider-title {
+			background-color: rgba(0, 0, 0, 0.7) !important;
+			color: #FFF;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+
+		ul,ol {
+			margin: 0;
+			padding: 5px 5px 5px 40px;
+		}
+
+		dl,p {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			background: 0 0
+		}
+		a:link { 
+			color: #000;
+		} 
+		a:visited { 
+			color: #000;
+		} 
+		a:hover { 
+			color: #000;
+		} 
+		a:link {
+			color: #000;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul,li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.wrap {
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+			float: left;
+		}
+		
+		.nav ul li {
+			background: #f6f6f6;
+			float: left;
+			text-align: center;
+			font-size: 1em;
+			height: 35px;
+			width: 25%;
+			border: 1px solid #fff;
+			box-sizing: border-box;
+		}
+
+		.nav ul li.on {
+			background-color: #006d83;
+		}
+
+		.nav ul li.on a {
+			color: #FFFFFF;
+		}
+
+		.nav ul li a {
+			display: inline-block;
+			line-height: 35px;
+			padding: 0 0.3em;
+		}
+		
+		
+		.drop a {
+			color: #006d83;
+			display: inline-block;
+			margin-bottom: 0.5em;
+			padding: 0 0.5em;
+			border-right: 1px solid #006d83;
+		}
+		.drop a:first-child{ margin-top: 10px;}
+		.drop a:last-child{ border-right:0;}
+		
+		.mainer{
+			padding-bottom: 2em;
+		}
+		.new_list{
+		    margin: 0 auto;
+		    margin-top: 2em;
+		}
+		.flt {
+		    float: left;
+		}
+		.new_list li {
+		    height: 4.2em;
+		    margin-bottom: 1em;
+		}
+		.new_list .img {
+		    width: 30%;
+    		max-width: 315px;
+    		padding-left: 5px;
+		}
+		.new_list .text{
+			width: 70%;
+			float: right;
+			padding: 5px 5px 0 10px;
+		}
+		.new_list img{
+			width: 100%;
+		}
+		.new_list li h2 {
+		    font-size: 0.9em;
+		    border-bottom: 0;
+		    padding-bottom: 0.2em;
+		    font-weight: normal;
+		}
+		.new_list li a{
+			display: block;
+			white-space:nowrap; 
+			overflow:hidden; 
+			text-overflow:ellipsis
+		}
+		.new_list li p {
+			margin-top: 5px;;
+			height: 3em;
+		    color: #9c9c9c;
+		    overflow:hidden;
+		    white-space: pre-wrap;
+			text-overflow:ellipsis;			
+		}
+		.load_more{
+			width: 100%;
+			text-align: center;
+			height: 2em;
+			line-height: 2em;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="mui-content">
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!--
+                    	作者：litdev@outlook.com
+                    	时间：2018-03-24
+                    	描述：图片顺序为：4、1、2、3、4、1
+                    -->
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="../img/demo/4.png">
+						<p class="mui-slider-title">第四个图片--1</p>
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="套餐详情.html">
+						<img src="../img/demo/1.png">
+						<p class="mui-slider-title">第一个图片第一个图片第一个图片</p>
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="套餐详情.html">
+						<img src="../img/demo/2.png">
+						<p class="mui-slider-title">第二个图片第二个图片第二个图片</p>
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="套餐详情.html">
+						<img src="../img/demo/3.png">
+						<p class="mui-slider-title">第三个图片</p>
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="套餐详情.html">
+						<img src="../img/demo/4.png">
+						<p class="mui-slider-title">第四个图片---2</p>
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="套餐详情.html">
+						<img src="../img/demo/1.png">
+						<p class="mui-slider-title">第一个图片第一个图片第一个图片</p>
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator mui-text-right">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+
+		<div class="nav_list">
+			<div class="nav">
+				<div class="wrap">
+					<ul>
+						<li class="on">
+							<a href="javascript:;" onclick="screen('1',0)">育儿</a>
+						</li>
+						<li>
+							<a href="javascript:;" onclick="screen('2',0)">女性</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="drop">
+				<div class="wrap">
+					<ul>
+						<li style="display: list-item;">
+							<p>
+								<a href="javascript:;" onclick="screen(0,'9')">腹痛</a>
+								<a href="javascript:;" onclick="screen(0,'28')">腹泻</a>
+								<a href="javascript:;" onclick="screen(0,'29')">呕吐</a>
+								<a href="javascript:;" onclick="screen(0,'30')">便秘</a>
+								<a href="javascript:;" onclick="screen(0,'31')">感冒</a>
+								<a href="javascript:;" onclick="screen(0,'32')">鼻炎</a>
+								<a href="javascript:;" onclick="screen(0,'33')">哮喘</a>
+								<a href="javascript:;" onclick="screen(0,'34')">母乳</a>
+								<a href="javascript:;" onclick="screen(0,'35')">饮食</a>
+								<a href="javascript:;" onclick="screen(0,'36')">儿童内分泌</a>
+								<a href="javascript:;" onclick="screen(0,'37')">早期发育</a>
+								<a href="javascript:;" onclick="screen(0,'38')">新生儿疾病</a>
+								<a href="javascript:;" onclick="screen(0,'39')">幽门螺杆菌</a>
+								<a href="javascript:;" onclick="screen(0,'40')">生长发育</a>
+								<a href="javascript:;" onclick="screen(0,'41')">湿疹</a>
+								<a href="javascript:;" onclick="screen(0,'42')">贫血</a>
+								<a href="javascript:;" onclick="screen(0,'43')">五官</a>
+								<a href="javascript:;" onclick="screen(0,'164')">睡眠</a>
+								<a href="javascript:;" onclick="screen(0,'163')">流感</a>
+								<a href="javascript:;" onclick="screen(0,'158')">耳鼻喉</a>
+								<a href="javascript:;" onclick="screen(0,'159')">咳嗽</a>
+								<a href="javascript:;" onclick="screen(0,'119')">育儿技巧</a>
+								<a href="javascript:;" onclick="screen(0,'95')">尿频</a>
+								<a href="javascript:;" onclick="screen(0,'93')">手足口病</a>
+								<a href="javascript:;" onclick="screen(0,'89')">肺炎</a>
+								<a href="javascript:;" onclick="screen(0,'86')">咽痛</a>
+								<a href="javascript:;" onclick="screen(0,'82')">发热</a>
+								<a href="javascript:;" onclick="screen(0,'81')">疫苗</a>
+								<a href="javascript:;" onclick="screen(0,'97')">儿童安全</a>
+								<a href="javascript:;" onclick="screen(0,'99')">儿童保健</a>
+								<a href="javascript:;" onclick="screen(0,'115')">过敏</a>
+								<a href="javascript:;" onclick="screen(0,'104')">传染病</a>
+								<a href="javascript:;" onclick="screen(0,'102')">小阴唇</a>
+								<a href="javascript:;" onclick="screen(0,'101')">免疫</a>
+								<a href="javascript:;" onclick="screen(0,'100')">看医生</a>
+							</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="mainer">
+			<div class="wrap">
+				<div class="new_list">
+					<ul>
+						<li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="Detail.html">医生妈妈二胎手记：为什么每个宝宝都需要靠...</a></h2>
+                             <p>学霸妈妈二胎计。</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="Detail">哪些孩子是哮喘的高危人群？</a></h2>
+                             <p>孩子一旦患上哮喘，就很难摆脱。不容乐观的是，近年来患哮喘的孩子一直呈上升的趋势。那么有没有方法可以区分出哮喘的高危人群，...</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=730&amp;from=home">发现孩子贫血该怎么办？</a></h2>
+                             <p>查找贫血的原因很重要。</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=729&amp;from=home">预防手足口，儿科医生教你十八字口诀</a></h2>
+                             <p>手足口病是一种全球性的流行疾病。每年从4月份开始，手足口病的发病数逐渐上升。4-7月和10-12月，都是手足口病的高发季...</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=726&amp;from=home">如何及早发现孩子近视？近视能够治愈吗？</a></h2>
+                             <p>近视是个老生常谈的话题，很多人都是近视患者。近视的人都不想戴眼镜，甚至有些人看不清楚也会硬挺着。从刚开始对“回归清晰世界...</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=722&amp;from=home">想要宝宝耳聪目明，你要关注这些事</a></h2>
+                             <p>http://mp.weixin.qq.com/s/KYavo6D9aXKTif91iWF00w</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=720&amp;from=home">宝宝身上的蒙古斑，会引起癌变吗？</a></h2>
+                             <p>我们来说说蒙古斑的那点事儿。
+</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="http://www.distinctlibrary.com/index.php/Home/Index/showArticle.html?id=718&amp;from=home">洗鼻这件小事，也有大讲究</a></h2>
+                             <p>我们常说的“洗鼻”，也就是鼻腔冲洗，最早源于印度，上世纪就被西方广泛接受，可以说是一项非常古老的治疗方法了，如今已经广泛...</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=715&amp;from=home">号称胜过洗鼻器，盐疗是鼻炎患者的“福音”...</a></h2>
+                             <p>鼻涕和鼻塞是最常见的呼吸道症状，从新生儿开始，到大宝宝以及成人，谁每年没有几次鼻塞，流涕？出现这种症状，鼻子不能通气、张...</p>
+                         </div>
+                     </li>
+					 <li>
+                         <div class="img flt"><img src="http://www.distinctlibrary.com/Uploads/5ad829e472923.jpg"></div>
+                         <div class="text">
+                             <h2><a href="/index.php/Home/Index/showArticle.html?id=714&amp;from=home">妈妈生病了，还能不能哺乳宝宝？</a></h2>
+                             <p>母乳对母婴双方的健康均有确证的益处，不进行母乳喂养的母亲和婴儿有更高的短期和长期健康风险，因此，母乳喂养被公认为是婴儿的...</p>
+                         </div>
+                     </li>
+					</ul>
+				</div>		
+				<div class="load_more">
+					加载更多
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	(function ($$) {
+		$$.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		var slider = $$("#slider").slider({
+			interval: 5000
+		});
+
+	})(mui);
+</script>
+
+</html>

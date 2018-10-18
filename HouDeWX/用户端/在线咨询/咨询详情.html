@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/swiper-4.2.0.min.css" />
+		<script type="text/javascript" src="../../js/mui.ext.loading.js" ></script>
+		<style>
+			.bbs-msg-left { display: flex; justify-content: space-between; flex-direction: row; }
+
+        .bbs-msg-left-headimg { width: 80px; height: 80px; }
+		.bbs-msg-left-headimg img{width: 80px; height: 80px; }
+        .bbs-msg-left-content { margin-left: 10px;    width: 100%; }
+            .bbs-msg-left-content p { font-size: 16px !important; }
+
+        .bbs-msg-left-album { margin: 1em 0; height: 50px; overflow: hidden; }
+
+            .bbs-msg-left-album img { width: 60px; float: left; margin-right: 10px; display: block; }
+
+        .msg-time span { color: rgba(0,0,0,0.4); font-size: 10px; }
+
+        #origin-img { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; }
+
+            #origin-img .swiper-slide img { width: 100%; vertical-align: middle; }
+
+        .swiper-pagination { top: 6em; bottom: auto; color: #fff; }
+        audio { width: 98%; }
+        .bbs-msg-left-text{min-height: 80px;}
+        .bbs-msg-time{text-align: center;margin-top: 10px;}
+        
+        #topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			#topPopover .mui-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			.mui-popover {
+				height: 100px;
+			}
+			
+			#showCInfo{
+				background-color: #efeff4;
+				height: 65%;
+				padding: 10px;
+    			
+			}
+			.c-user{
+				background: white;
+				height: 100%;
+				border-radius: 2px;    
+    			background-clip: padding-box;
+    			box-shadow: 0 1px 2px rgba(0,0,0,.3);
+			}
+			.c-user-item{
+				padding: 10px;
+				border-bottom: 1px solid #c8c7cc;
+			}
+			.c-user-item:last-child{
+				border-bottom: none;
+			}
+			.c-user-item span{margin-left: 10px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
+			<button type="button" onclick="javascript:location.href='咨询列表.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">咨询详情</h1>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../../img/demo/tel-1.jpg" />
+									<img src="../../img/demo/tel-2.jpg" />
+									<img src="../../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<div class="bbs-msg-left-headimg">
+								<img src="../../img/default-avatar.jpg" />									
+							</div>
+							
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<img class="bbs-msg-left-headimg" src="../../img/default-avatar.jpg" />
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-text">
+									<p>本内容</p>
+								</div>
+							</div>
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../../img/demo/tel-1.jpg" />
+									<img src="../../img/demo/tel-2.jpg" />
+									<img src="../../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<img class="bbs-msg-left-headimg" src="../../img/default-avatar.jpg" />
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<img class="bbs-msg-left-headimg" src="../../img/default-avatar.jpg" />
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../../img/demo/tel-1.jpg" />
+									<img src="../../img/demo/tel-2.jpg" />
+									<img src="../../img/demo/tel-3.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="bbs-msg-left">
+							<div class="bbs-msg-left-content">
+								<div class="bbs-msg-left-message">
+									<audio controls="controls">
+									  <source src="http://58.250.163.63:9000/uploads/test.mp3" type="audio/mpeg">
+									</audio>
+								</div>
+								<div class="bbs-msg-left-text">
+									<p>这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容这里是文本内容</p>
+								</div>
+								<div class="bbs-msg-left-album" thumblist="list1">
+									<img src="../../img/demo/tel-1.jpg" />
+									<img src="../../img/demo/tel-2.jpg" />
+									<img src="../../img/demo/tel-3.jpg" />
+								</div>
+
+							</div>
+							<img class="bbs-msg-left-headimg" src="../../img/default-avatar.jpg" />
+						</div>
+						<div class="mui-text-center">
+							<p>2018-03-30 16:12</p>
+						</div>
+					</li>
+				</ul>
+				
+				<button type="button" onclick="location.href='回复.html'" class="mui-btn mui-btn-primary mui-btn-block" style="margin-top: 20px;">继续回复</button>
+				
+			</div>
+			<div class="mui-bar-footer mui-text-center" style="width: 100%;">
+				<p>© 2018 All Rights Reserved</p>
+			</div>
+		</div>
+
+		<div class="swiper-container" id="origin-img">
+			<div class="swiper-wrapper"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+		
+		<!--右上角弹出菜单-->
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper custom-scroll">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell"><a href="#showCInfo" onclick="lockInfo()">查看咨询信息</a></li>
+						<li class="mui-table-view-cell"><a href="#" onclick="setDone()">结束咨询</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div id="showCInfo" class="box mui-popover mui-popover-action mui-popover-bottom">
+			<div class="c-user">
+				<div class="c-user-item">
+					<label>姓名：</label><span>张三啊</span>
+				</div>
+				<div class="c-user-item">
+					<label>性别：</label><span>男</span>
+				</div>
+				<div class="c-user-item">
+					<label>年龄：</label><span>25岁</span>
+				</div>
+				<div class="c-user-item">
+					<label>地区：</label><span>深圳</span>
+				</div>
+				<div class="c-user-item">
+					<label>病症类型：</label><span>儿科</span>
+				</div>
+				<div class="c-user-item">
+					<label>已付咨询费：</label><span>￥22</span>
+				</div>
+				<div class="c-user-item">
+					<label>创建时间：</label><span>2018-05-01 22：23：32</span>
+				</div>
+				<div class="c-user-item">
+					<label>支付时间：</label><span>2018-05-01 22：23：32</span>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/mui.min.js" ></script>
+	<script type="text/javascript" src="../../js/mui.ext.loading.js" ></script>
+	<script>
+		function lockInfo(){
+			mui('#topPopover').popover('hide');
+						
+		}
+		
+		//设置完成
+		function setDone(){
+			mui('#topPopover').popover('hide');
+			var btnArray = ['否', '已解决'];
+            mui.confirm('确认解决了患者的咨询？', '确认操作', btnArray, function (e) {
+                if (e.index == 1) {
+                    mui.toast("ssss");
+                } else {
+                    mui.toast("取消操作");
+                }
+            })
+		}
+		//mui('.custom-scroll').scroll();
+		mui('body').on('shown', '.mui-popover', function(e) {
+			$("#topPopover").css("top", "50px");
+		//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		mui('body').on('hidden', '.mui-popover', function(e) {
+		//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+	</script>
+
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/pubh.css">
+	<style>
+		.mui-row.mui-fullscreen>[class*="mui-col-"] {
+				height: 100%;
+			}
+			
+			.mui-col-xs-3,
+			.mui-control-content {
+				overflow-y: auto;
+				height: 100%;
+			}
+			
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				background-color: #fff;
+			}
+						
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				background-color: #fff;
+			}
+			
+			.fixed-group-buttom { font-size:14px; height: 44px; width: 100%; background: white; padding: 1px 10px; position: fixed; display: flex; justify-content: space-between; align-items: center; }
+			.fixed-group-buttom label { font-size:16px; color: #F5A623; }
+			header a{color: #FFF;}
+			.mui-bar-nav{-webkit-box-shadow:none;box-shadow:none;}
+			#segmentedControls .mui-control-item{color: #000;}
+			.mui-input-row label{color: rgba(0,0,0,0.9);}
+			.mui-btn{background-color: #54C3F1; color: #FFF;}
+		</style>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a id="back_btn" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">选择体检项</h1>
+	</header>
+
+	<div class="mui-content mui-row mui-fullscreen" style="padding-bottom: 45px;">
+		<div class="mui-col-xs-3">
+			<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+			</div>
+		</div>
+		<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+			<div id="item1" class="mui-control-content mui-active">
+			</div>
+			<div id="item2" class="mui-control-content">
+			</div>
+			<div id="item3" class="mui-control-content">
+			</div>
+		</div>
+	</div>
+	<div class="mui-bar-footer fixed-group-buttom">
+		<div class="bar-left">
+			增加 <label id="footer_total">0</label> 项 <label id="footer_select_price">￥343 </label></span>
+			<span style="margin-left:10px;">总价:<label id="footer_total_price" style="margin-right:20px;">￥5433</label></span>
+		</div>
+		<div class="bar-right">
+			<button class="mui-btn" id="done">选好了</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" charset="UTF-8">
+	mui.init();
+	var medical_amount = 5483;
+	var select_total = 0;
+	var select_ids = [];
+	function ckOnchange() {
+		select_ids = [];
+		select_total = $("input:checkbox:checked").length;
+		$("#footer_total").text(select_total);
+		var select_price = 0.00;
+		$("input:checkbox:checked").each(function (i, item) {
+			var item_price = parseFloat($(this).attr("data-price"));
+			select_price += item_price;
+			select_ids.push($(this).val());
+			console.log(select_ids.join(','));
+		})
+		$("#footer_select_price").text("￥" + select_price);
+		$("#footer_total_price").text("￥" + (medical_amount + select_price));
+
+		// if (select_total > 0) {
+		// 	$("#done").removeClass("mui-disabled");
+		// 	$("#done").text("完成(" + select_total + ")")
+		// } else {
+		// 	$("#done").addClass("mui-disabled");
+		// 	$("#done").text("完成");
+		// }
+
+	}
+
+	function UpdateOrder() {
+		if (select_total <= 0) return;
+		console.log("这里Ajax更新订单信息");
+	}
+
+	mui.ready(function () {
+		var done = document.getElementById('done');
+		var back = document.getElementById('back_btn');
+
+		//返回事件
+		back.addEventListener('tap', function () {
+			location.href = '套餐下单.html';
+		}, false);
+
+		//done event
+		done.addEventListener('tap', function () {
+			if(select_total>0){
+				mui.alert("Ajax请求");
+			}else{
+				mui.alert("返回上一页");
+			}
+		}, false);
+
+	})
+
+	var controls = document.getElementById("segmentedControls");
+	var contents = document.getElementById("segmentedControlContents");
+	var html = [];
+	var i = 1,
+		j = 1,
+		m = 16, //左侧选项卡数量+1
+		n = 11; //每个选项卡列表数量+1
+	for (; i < m; i++) {
+		html.push('<a class="mui-control-item" data-index="' + (i - 1) + '" href="#content' + i + '">选项' + i + '内容再多一点</a>');
+	}
+	controls.innerHTML = html.join('');
+	html = [];
+	for (i = 1; i < m; i++) {
+		html.push('<div id="content' + i + '" class="mui-control-content"><ul class="mui-table-view">');
+		html.push('<li class="mui-table-view-cell" style="padding: 8px 15px;text-align: center;font-size: 16px;"><label>' + $(".mui-control-item")[i - 1].innerHTML + '</label></li>');
+		for (j = 1; j < n; j++) {
+			//html.push('<li class="mui-table-view-cell">第' + i + '个选项卡子项-' + j + '</li>');
+			html.push('<li class="mui-table-view-cell" style="padding: 8px 15px;"><div class="mui-input-row mui-checkbox"><label style="padding: 8px 0;font-size:13px;">第' + i + '个选项卡子项-' + j + '</label><input name="checkboxitem" onchange="ckOnchange()" data-price="' + (j + 2.5) + '" id="ck_test_' + j + '" value="' + j + '" type="checkbox" style="right:0;"></div></li>');
+		}
+		html.push('</ul></div>');
+	}
+	contents.innerHTML = html.join('');
+	//默认选中第一个
+	controls.querySelector('.mui-control-item').classList.add('mui-active');
+	contents.querySelector('.mui-control-content').classList.add('mui-active');
+
+</script>
+
+</html>

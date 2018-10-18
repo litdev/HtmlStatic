@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<style>
+			.custom-pullrefresh {
+				top: 100px !important;
+				bottom: 30px !important;
+			}
+			
+			.top-s-amount {
+				padding-top: 6px;
+				text-align: center;
+			}
+			
+			.amount {
+				font-size: 24px;
+				color: #F5A623;
+			}
+			.data-item{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				
+			}
+			.item-text {
+				font-size: 14px;
+			}
+			.item-amount{
+				font-size: 16px;
+				color: #F5A623;
+			}
+			.no-right{
+				padding-right: 10px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='个人中心首页.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">余额支出明细</h1>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="top-s-amount">
+					<span>当前余额：</span>
+					<span class="amount">￥12222</span>
+
+				</div>
+				<!--下拉刷新容器-->
+				<div id="pullrefresh" class="mui-content mui-scroll-wrapper custom-pullrefresh">
+					<div class="mui-scroll">
+						<!--数据列表-->
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell no-right">
+								<div class="data-item">
+									<div class="item-text">
+										<span>这里是详细支出内容备注这里是详细支出内容备注这里是详细支出内容备注</span>
+										<h5>2018-03-23 08:55</h5>
+									</div>
+									<div class="item-amount">
+										+12322.00
+									</div>
+								</div>
+							</li>
+							<li class="mui-table-view-cell no-right">
+								<div class="data-item">
+									<div class="item-text">
+										<span>这里是详细支</span>
+										<h5>2018-03-23 08:55</h5>
+									</div>
+									<div class="item-amount">
+										+12322.00
+									</div>
+								</div>
+							</li>
+							<li class="mui-table-view-cell no-right">
+								<div class="data-item">
+									<div class="item-text">
+										<span>这里是详细支出内容备注这里是详细支出内容备注这里是详细支出内容备注</span>
+										<h5>2018-03-23 08:55</h5>
+									</div>
+									<div class="item-amount">
+										+992.00
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;height: 20px;line-height: 10px;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			pullRefresh: {
+				container: '#pullrefresh',
+				
+				 down: {
+				 	contentdown: "下拉可以刷新",//在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+                    contentover: "释放立即刷新",//在释放可刷新状态时，下拉刷新控件上显示的标题内容
+                    contentrefresh: "正在刷新...",//正在刷新状态时，下拉刷新控件上显示的标题内容
+					callback: pulldownRefresh
+				}, 
+				up: {
+					contentrefresh: '正在加载...',
+                    contentnomore: '没有更多数据了',
+					callback: pullupRefresh
+				}
+			}
+		});
+
+		/**
+		 * 下拉刷新具体业务实现
+		 */
+		function pulldownRefresh() {
+			setTimeout(function() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 3; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<div class="data-item"><div class="item-text"><h4>这里是详细支-'+(i+1)+'</h4><h5>2018-03-23 08:55</h5></div><div class="item-amount">+12322.00</div></div>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+				mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+			}, 1500);
+		}
+		var count = 0;
+		/**
+		 * 上拉加载具体业务实现
+		 */
+		function pullupRefresh() {
+			setTimeout(function() {
+				mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 5; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell no-right';
+					li.innerHTML = '<div class="data-item"><div class="item-text"><span>这里是详细支-'+(i+1)+'</span><h5>2018-03-23 08:55</h5></div><div class="item-amount">+12322.00</div></div>';
+					table.appendChild(li);
+				}
+			}, 1500);
+		}
+	</script>
+
+</html>

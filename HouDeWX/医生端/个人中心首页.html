@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			.mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.head-img {
+				width: 90px;
+				height: 90px;
+			}
+			
+			.user-info {
+				margin-left: 100px;
+			}
+			
+			.user-nickname {
+				height: 32px;
+				width: 150px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			
+			.user-nickname span {
+				width: 130px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.user-nickname img {
+				width: 40px;
+				height: 32px;
+			}
+			
+			.user-qb {
+				height: 50px;
+				margin-top: 4px;
+			}
+			
+			.user-qb p {
+				width: 150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<h1 class="mui-center mui-title">个人中心</h1>
+		</div>
+
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="javascript:;" onclick="location.href='资料详情.html'">
+						<img class="mui-pull-left head-img" id="head-img" src="../img/default-avatar.jpg">
+						<div class="user-info">
+							<div class="user-nickname">
+								<span>HelloWorld</span>
+								<label>主治医师</label>
+							</div>
+							<div class="user-qb">
+								<p class='mui-ellipsis' id="jiesuan">可结算金额：0.00 元 </p>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a href="资料详情.html" class="mui-navigate-right">我的资料</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a href="预约列表.html" class="mui-navigate-right">预约列表</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="预约设置.html" class="mui-navigate-right">预约设置</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a onclick="javascript:location.href='用户咨询列表.html'" class="mui-navigate-right">用户咨询
+						<span class="mui-pull-right" id="span_price">￥100/次</span>
+						<input type="hidden" value="100" id="hid_zx_price" />
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a>接受在线咨询
+						<div class="mui-switch mui-switch-blue" id="mySwitch">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script>
+		(function($$) {
+			$$.init();			
+		})(mui);
+		document.getElementById("mySwitch").addEventListener("toggle", function(event) {
+			if(event.detail.isActive) {
+				console.log("你启动了开关");
+			} else {
+				console.log("你关闭了开关");
+			}
+		})
+		$("#head-img").on('click', function(event) {
+			event.stopPropagation();
+			alert("修改头像")
+
+		});
+		
+		$("#span_price").on('click',function(event){
+			event.stopPropagation();
+			var default_price = $("#hid_zx_price").val();
+			mui.prompt('',default_price,'修改咨询单价',['取消','保存'],function(e){
+				if(e.index == 1){
+					console.log(e.value);
+					$("#span_price").text("￥" +e.value +"/次");
+					$("#hid_zx_price").val(e.value);
+				}else
+				{
+					console.log("取消设置价格");
+				}
+			},'div')
+			document.querySelector('.mui-popup-input input').type='number';
+		});
+		
+		$("#jiesuan").on('click', function(event) {
+			event.stopPropagation();
+			location.href = "咨询结算.html";
+		});
+	</script>
+
+</html>

@@ -1,0 +1,127 @@
+.price{
+    color: #FABE00;
+}
+
+.bigfont{
+    font-size: 1.25rem;
+}
+
+.btn-bule{
+    background-color: #54C3F1;
+    color: #FFF;
+}
+
+.text-zhushi{
+    text-decoration: line-through;
+}
+
+/* 底部固定栏 */
+.fixed-group-buttom {
+    height: 50px;
+    width: 100%;
+    background: #FFF;
+    padding: 1px 10px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-top: 1px solid #C9CACA;
+}
+
+.m-info-head{
+    height: 110px;
+    background-color: #FFF;
+    display: flex;
+    padding: 20px;
+    margin-top: 10px;
+}
+.m-info-head img{
+    height: 70px;
+    border-radius: 10px;
+}
+.m-info-head-content{
+    padding: 10px 0 0 15px;
+}
+
+.m-info-content{
+    margin-top: 15px;
+    background-color: #FFF;
+}
+.mui-slider-indicator.mui-segmented-control{
+    height: 45px;
+    widows: 90%;
+    font-size: 1.0625rem;
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll{
+    width: inherit !important;
+    height: 45px;
+    line-height: 45px;
+    display: flex;
+    justify-content: space-around;  
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+    line-height: 45px;
+    font-size: 18px;
+    color: #9FA0A0;
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+    color: #54C3F1;
+    border-bottom: 2px solid #54C3F1;
+}
+
+.m-info-view{
+    margin: 20px 10px;
+    border-bottom: 1px solid #C9CACA;
+}
+.m-info-view:last-child{
+    border-bottom: none;
+}
+
+.m-info-view-title{
+    display: flex;
+    align-items: center;
+}
+.m-info-view-title i{
+    display: block;
+    width: .25rem;
+    height: .875rem;
+    background-color: #54C3F1;
+}
+
+.m-info-view-title span{
+    margin-left: .625rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.m-info-medical-item{
+    list-style: decimal;
+    color: rgba(0, 0, 0, 0.8);
+}
+.m-info-medical-item li{
+}
+.m-info-medical-item li p{
+    margin-left: -.875rem;
+    margin-top: .3125rem;
+    color: #9FA0A0;
+}
+.m-info-medical-add-total{
+    text-align: right;
+    font-size: 15px;
+    margin-right: .625rem;
+    margin-bottom: .625rem;
+}
+.m-info-medical-add-total label{
+    color: #54C3F1;
+}
+
+.m-info-xuzhi{
+    margin: 20px 10px;
+    line-height: 25px !important;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.m-info-medical-add-none{
+    margin: 20px;
+}

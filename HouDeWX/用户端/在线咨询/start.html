@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.custom-head{
+				padding-right: 10px !important;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.custom-head-doc{
+				display: inline-flex;
+				align-items: center;
+			}
+			.custom-head-doc img{
+				margin-right: 10px;
+				width: 25px;
+				height: 25px;
+			}
+			.custom-input input,textarea{
+				border: none;
+				margin-bottom: 0 !important;
+			}
+			.custom-input li{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.custom-input label{
+				width: 40%;
+			}
+			.custom-li-br{
+				display: block !important;
+				margin-top: 10px;
+			}
+			.row-ertitle{
+				margin-left: 5px;
+				font-size: 14px;
+				color: rgba(0,0,0,0.6);
+			}
+			#info{
+				color: rgba(0,0,0,0.6);
+			}
+			
+			.upload-album {
+				list-style: none;
+				margin: 0;
+				padding: 10px 0;
+			}
+			
+			.upload-album li {
+				float: left;
+				margin: 5px;
+				position: relative;
+				width: 30%;
+			}
+			
+			.upload-album li img {
+				width: 100%;
+				height: 99px;
+			}
+			
+			.upload-album li i {
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url(../../img/icon-cancel.png) no-repeat;
+				background-size: 24px 24px;
+				position: absolute;
+				top: 2px;
+				right: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='info.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">填写咨询内容</h1>
+		</div>
+		
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 10px 0;">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell custom-head">
+						<a>向TA咨询
+							
+						</a>
+						<div class="custom-head-doc">						
+							<img src="http://mp.holdermedcare.com/uploads/mpavatar/65d160b32445bd9337f7b495d89b2fd4.jpeg"/>
+							<span>张医生</span>
+						</div>
+					</li>
+				</ul>
+				
+				<ul class="mui-table-view custom-input" style="margin-top: 10px;">
+					<li class="mui-table-view-cell">
+						<label>病症类型</label>
+						<input type="text" class="mui-input-clear" name="text_ctype" id="text_ctype" value="" placeholder="点击选择类型" />
+					</li>
+					<li class="mui-table-view-cell">
+						<label>所在地</label>
+						<input type="text" class="mui-input-clear" name="text_local" id="text_local" value="" placeholder="请输入所在地" maxlength="6" />
+					</li>
+					<li class="mui-table-view-cell custom-li-br">
+						<label>问题描述:</label>
+						<textarea id="txt_remark" data-maxNumber="100" cols="50" rows="6" style="margin-top: 10px;" placeholder="请详细描述您的患病时间、症状、先骨干医生的诊断，药物服用情况以及您当前需要医生为您解答的问题"></textarea>
+					</li>
+				</ul>
+				
+				<ul class="mui-table-view"  style="margin-top: 10px;">
+					<li class="mui-table-view-cell">
+						<label>图片上传</label><label class="row-ertitle">(检查报告，症状部位等图片)</label>
+						<ul class="upload-album">
+							<li><img src="../../img/demo/tel-1.jpg" /><i /></li>
+							<li><img src="../../img/demo/tel-1.jpg" /><i /></li>
+							<li><img src="../../img/demo/tel-1.jpg" /><i /></li>
+							<li><img src="../../img/demo/tel-1.jpg" /><i /></li>
+							<li class="upload-album-add"><img src="../../img/upload-add.png" /> </li>
+						</ul>
+						
+					</li>
+				</ul>
+				
+			</div>
+			<div class="mui-content-padded">
+				<button type="button" onclick="location.href='pay.html'" class="mui-btn mui-btn-primary mui-btn-block" style="margin-top: 20px;">提交并支付￥99</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.limitTextarea.js"></script>
+		<script>
+		$(function() {
+			$('#txt_remark').limitTextarea({
+				maxNumber: parseInt($('#txt_remark').attr('data-maxNumber')), //最大字数
+				position: 'bottom', //提示文字的位置，top：文本框上方，bottom：文本框下方
+				onOk: function() {
+					$('#txt_remark').css('background-color', 'white');
+					console.log('启用提交按钮')
+				}, //输入后，字数未超出时调用的函数
+				onOver: function() {
+					$('#txt_remark').css('background-color', 'lightpink');
+					console.log('禁用提交按钮')
+				} //输入后，字数超出时调用的函数，这里把文本区域的背景变为粉红色   
+			});
+		});
+	</script>
+	</body>
+</html>

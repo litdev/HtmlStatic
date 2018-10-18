@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			.mui-table-view {
+				margin-top: 10px;
+			}
+			
+			.head-img {
+				width: 90px;
+				height: 90px;
+			}
+			
+			.user-info {
+				margin-left: 100px;
+			}
+			
+			.user-nickname {
+				height: 32px;
+				width: 150px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			
+			.user-nickname span {
+				width: 130px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.user-nickname img {
+				width: 40px;
+				height: 32px;
+			}
+			
+			.user-qb {
+				height: 50px;
+				margin-top: 4px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='预约列表.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">预约用户详情</h1>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">
+							<img class="mui-pull-left head-img" id="head-img" src="../img/default-avatar.jpg">
+							<div class="user-info">
+								<div class="user-nickname">
+									<span>HelloWorld</span>
+									<label>男 &nbsp;  26岁</label>
+								</div>
+								<div class="user-qb">
+									<p class='mui-ellipsis' style="font-size: 20px;">03-24 上午08:30-09:00</p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				
+				<p style="margin-top: 10px;">病情描述</p>
+				<p>
+					这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述
+					这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述这里是病情描述
+				</p>
+				<button type="button" class="mui-btn mui-btn-outlined mui-btn-block">TA的历史体检记录</button>
+				
+			</div>
+
+			<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+				<p>© 2018 All Rights Reserved</p>
+			</div>
+		</div>
+	</body>
+
+</html>

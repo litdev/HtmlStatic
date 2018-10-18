@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    display: none;
+    z-Index: 999;
+}
+
+#modal {
+    position: absolute;
+    width: 80%;
+    height: 42%;
+    top: 20%;
+    left: 10%;
+    background-color: #fff;
+    display: none;
+    z-Index: 9999;
+    border-radius: 10px;
+}
+
+.modal-close {
+    display: block;
+    width: 25px;
+    height: 25px;
+    font-size: 25px !important;
+    background: url(../img/icon-modal-close.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: 88%;
+    top: 10px;
+}
+
+.modal-content {
+    margin: 10px;
+}
+
+.pay-top {
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+    height: 50px;
+    line-height: 50px;
+}
+
+.pay-top-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 15px;
+}
+
+.pay-top-center span {
+    display: block;
+    color: black;
+}
+
+.money {
+    color: #FF8C00 !important;
+}
+
+.span-paytype {
+    display: block;
+    margin: 20px 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pay-view {
+    margin-top: 20px;
+}
+
+.pay-item {
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #E4E4E4;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.paytype {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-image: url('../img/radio-unchecked.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    margin-top: -4px;
+    border-radius: 25px;
+}
+
+input[type="radio"]:checked+.paytype {
+    background-image: url('../img/radio-check.png');
+}
+
+.pay-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.pay-item-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+}
+
+.pay-item img {
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+.foot {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.foot button {
+    background-color: #FF6F00;
+    color: #FFF;
+    font-size: 1.25rem;
+    border: none;
+    width: 95%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.ma-box{
+    margin-top: 30px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+}
+.ma-box span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.ma-box input{
+    width: 80%;
+    margin-top: 25px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    letter-spacing: 10px;
+    text-align: center;
+}
+.ma-box button{
+    margin-top: 25px;
+    background-color: #FF6F00;
+    color: #FFF;
+    font-size: 1.25rem;
+    border: none;
+    width: 86%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 4px;
+    outline: none;
+}

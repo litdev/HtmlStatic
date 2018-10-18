@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+	<link href="../../css/baogao.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<!--
+            
+			<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			-->
+		<h1 class="mui-center mui-title">报告查询</h1>
+	</div>
+
+	<div class="mui-content">
+		<div class="head-img">
+			<img src="../../img/icon-bingliben.png" />
+		</div>
+
+		<div class="input-area">
+			<input type="number" placeholder="请输入手机号" />
+			<div class="yanzhengma">
+				<input type="number" placeholder="动态密码" />
+				<button onclick="" class="sending">30S后重发</button>
+			</div>
+		</div>
+
+		<div class="input-btn">
+			<button>确认</button>
+		</div>
+
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type: "POST",
+			url: "/MP/Tools/Send",
+			data: { "": "", "": "" },
+			dataType: "JSON",
+			success: function (response) {
+
+			}, error: function (xhr) {
+
+			}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+a,span,label,text{
+	color: #727171;
+}
+span.mui-icon {
+	font-size: 14px;
+	color: #007aff;
+	margin-left: -15px;
+	padding-right: 10px;
+}
+
+.mui-scroll-wrapper{
+	top:55px !important;
+}
+.mui-popover .mui-scroll-wrapper {
+	top: 0 !important;
+}
+.search-flex {
+}
+
+input[type='search'] {
+	background-color: white;
+	border-radius: 0;
+	height: 45px;
+}
+.mui-search{
+	
+}
+.mui-search .mui-placeholder{
+	height: 45px;
+	line-height: 45px;
+}
+
+.search-bar {
+	display: flex;
+	justify-content: space-around;
+	background: #fff;
+	height: 45px;
+	line-height: 45px;
+	margin-top: -5px;
+}
+
+.search-bar a {
+	display: block;
+}
+.mui-table-view-cell a{
+	color: #727171 !important;
+}
+#topPopover {
+	position: fixed;
+	top: 16px;
+	right: 6px;
+}
+
+#topPopover .mui-popover-arrow {
+	left: auto;
+	right: 6px;
+}
+
+.mui-popover {
+	height: 300px;
+}
+
+.mui-content {}
+
+.doc-list {}
+
+
+
+.pf-div  
+{  
+	margin-left: 5px;
+    width:70px;  
+    height:14px;   
+    background: url('../img/icon-star-b.png') top left repeat-x;
+    background-size: 14px;  
+    font-size: 7px;  
+    position:relative  
+}  
+.rate  
+{    
+    height:100%;  
+    /*background:red;*/  
+    background: url('../img/icon-star-f.png') top left repeat-x;
+    background-size: 14px;    
+    position:absolute;  
+}  
+.doc-item {
+	padding: 10px;
+	border-bottom: 1px solid #E6E6E6;
+	background: #fff;
+	margin-top: 10px;
+}
+.doc-item:last-child {
+	border: none;
+}
+
+.doc-avatar {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 10px;
+}
+
+.doc-avatar img {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+}
+
+.doc-cont {
+	padding: 5px 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.doc-cont label {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.doc-cont span{
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.span-shanchang{
+	display: block;
+}
+.doc-cont text{
+	font-size: 14px;
+}
+.doc-title{
+	display: flex;
+	flex-flow: row;
+}
+.doc-title label{margin-right: 10px;}
+.doc-title span{margin-right: 10px;}
+.online{margin-left: 20px; color: #00B9EF;}
+.offonline{margin-left: 20px;color: #9FA0A0;}
+.doc-keshi,.doc-shanchang{margin-top: 2px;}
+.pf-txt{}
+.doc-pingfen{
+	display: flex;
+	align-items: center;
+}
+.doc-yuyue{
+	margin-left: 20px;
+}
+.yyl{
+	color: #FABE00;
+	margin-left: 5px;
+}
+
+.doc-tools{
+	margin-top: 15px;
+	display: flex;
+	flex-direction: row;
+}
+.doc-tools span{
+	display: block;
+	margin: 0 10px 0 0;
+	border: 1px solid #00B9EF;
+	border-radius: 10px;
+	padding: 0 10px;
+	color: #00B9EF;
+}

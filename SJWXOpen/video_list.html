@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的大电影</title>
+    <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/video.css">
+</head>
+
+<body>
+    <!-- 遮罩层 -->
+    <div id="cover"></div>
+    <div id="modal">
+        <!-- <i class="modal-close" onclick="closeModal()"></i> -->
+        <div class="modal-content">
+            <div class="bind-box">
+                <span class="bind-title">绑定手机号</span>
+                <input type="tel" name="input_telphone" maxlength="11" id="input_telphone" placeholder="请输入手机号">
+                <div class="tel-vcode">
+                    <input type="number" name="input_code" id="input_code" maxlength="4" placeholder="输入验证码">
+                    <button class="gcode-befor" onclick="sendVCode(this)">获取验证码</button>
+                </div>
+                <button class="input_btn_bind" onclick="goBindTel(this)">立即绑定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="pullrefresh" class="mui-content mui-scroll-wrapper custom-pullrefresh">
+        <div class="mui-scroll">
+            <div class="ctop">
+                <span>为保障您的隐私，2天后视频将自动清除</span>
+                <label>如果您想保存视频到相册，请选择下载"试镜"APP</label>
+                <button onclick="openModal()"></button>
+            </div>
+            <ul class="mui-table-view mui-table-view-chevron video-list" id="ul_data_list" template-id="template_list"
+                pageIndex="1">
+                <li>
+                    <div class="video-box">
+                        <div class="video-doing"><img src="img/img_video_timeout.png" alt="" width="100%" height="200"></div>
+                        <div class="video-bar">
+                            <span class="video-title">英雄联盟</span>
+                            <button class="btn-share share-disabled-find"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="video-box">
+                        <div class="video-doing"><img src="img/img_video_doing.png" alt="" width="100%" height="200"></div>
+                        <div class="video-bar">
+                            <span class="video-title">英雄联盟</span>
+                            <button class="btn-share share-disabled"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="video-box">
+                        <video loop playsinline style="z-index:-1" width="100%" x5-playsinline="true"
+                            -webkit-playsinline="true" webkit-playsinline="true" controls="controls" src="http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4"
+                            poster="http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg" type="video/mp4">
+                        </video>
+                        <div class="video-bar">
+                            <span class="video-title">英雄联盟</span>
+                            <button class="btn-share"></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="video-box">
+                        <video loop playsinline style="z-index:-1" width="100%" x5-playsinline="true"
+                            -webkit-playsinline="true" webkit-playsinline="true" controls="controls" src="http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4"
+                            poster="http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg" type="video/mp4">
+                        </video>
+                        <div class="video-bar">
+                            <span class="video-title">英雄联盟</span>
+                            <button class="btn-share"></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div id="div_nomore" class="mui-center" style="display:none;text-align:center;margin-top:20px;">没有更多数据了</div>
+        </div>
+    </div> -->
+    <div class="no-data">
+        <img src="img/icon_data_empt.png" alt="">
+        <span>您还没有相关数据</span>
+        <button></button>
+    </div>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper custom-pullrefresh">
+        <div class="mui-scroll">
+            <div class="ctop">
+                <span>为保障您的隐私，2天后视频将自动清除</span>
+                <span class="cclabel">保存视频到手机相册，请下载"试镜"APP</span>
+                <button>立即下载</button>
+            </div>
+            <ul class="mui-table-view mui-table-view-chevron video-list" id="ul_data_list" template-id="template_list"
+                pageIndex="1">
+                <script type="text/html" id="template_list">
+                    {{each data}}
+                    <li>
+                        <div class="video-box">
+                            {{if $value.is_done}}
+                            <!-- 视频已完成 -->
+                                {{if $value.is_timeout}}
+                                <div class="video-doing"><img src="img/img_video_timeout.png" alt="" width="100%" height="200"></div>
+                                <div class="video-bar">
+                                    <span class="video-title">{{$value.title}}</span>
+                                    <button class="btn-share share-disabled-find">找回视频</button>
+                                </div>
+                                <!-- 已过期 -->
+                                {{else}}                                
+                                <!-- 未过期 -->
+                                <video loop playsinline id="myVideo" style="z-index:-1" width="100%" height="200"
+                                    x5-playsinline="true" 
+                                    -webkit-playsinline="true"
+                                    webkit-playsinline="true"
+                                    controls="controls" src="{{$value.video_src}}"
+                                    poster="{{$value.video_img}}"
+                                    type="video/mp4">
+                                </video>
+                                <div class="video-bar">
+                                    <span class="video-title">{{$value.title}}</span>
+                                    <button class="btn-share" onclick="location.href='video_share.html';">分享</button>
+                                </div>
+                                {{/if}}
+                            {{else}}
+                            <!-- 视频未完成 -->
+                            <div class="video-doing"><img src="img/img_video_doing.png" alt="" width="100%" height="200"></div>
+                            <div class="video-bar">
+                                <span class="video-title">{{$value.title}}</span>
+                            </div>
+                            {{/if}}
+                            
+                        </div>
+                    </li>
+
+                    {{/each}}
+                </script>
+            </ul>
+            <div id="div_nomore" class="mui-center" style="display:none;text-align:center;margin-top:20px;">没有更多数据了</div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
+    <script src="http://shop.model-me.cn/Assets/js/artTemplate.js"></script>
+
+    <script>
+        var pageSize = 14;
+        var totalPage; //总页码
+        mui.init({
+            pullRefresh: {
+                container: '#pullrefresh',
+                down: {
+                    auto: true,//可选,默认false.首次加载自动上拉刷新一次
+                    callback: pulldownRefresh
+                },
+                // up: {
+                //     contentrefresh: '正在加载...',
+                //     callback: pullupRefresh
+                // }
+            }
+        });
+
+        /**
+         * 下拉刷新具体业务实现
+         */
+        function pulldownRefresh() {
+            // mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+            // return;
+            $('#ul_data_list').attr('pageIndex', 1);
+            Ajax_Load_Pullrefresh_Data(true, "ul_data_list");
+        }
+        // /**
+        //  * 上拉加载具体业务实现
+        //  */
+        // function pullupRefresh() {
+        //     // mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+        //     // return;
+        //     Ajax_Load_Pullrefresh_Data(false, "ul_data_list");
+
+        // }
+
+
+        function Ajax_Load_Pullrefresh_Data(reload, ul_id) {
+            var ul_page_index = parseInt($('#' + ul_id).attr('pageIndex'));
+            if (ul_page_index == 0) ul_page_index = 1;
+            var idnmber = $("#hid_idnumber").val();
+            unBindTap();
+            mui.ajax({
+                url: "http://shop.model-me.cn/uploads/video_list.json",
+                data: {
+                    "page_size": pageSize,
+                    "page_index": ul_page_index,
+                    "id_number": idnmber
+                },
+                dataType: 'json', //服务器返回json格式数据
+                type: 'post', //HTTP请求类型
+                //async:false,//同步请求
+                timeout: 10000, //超时时间设置为10秒
+                success: function (res) {
+                    //异常处理；
+                    mui('#pullrefresh').pullRefresh().refresh(true);
+                    if (reload) {
+                        mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+                    }
+                    mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+                    mui.toast('获取数据失败，请检查网络连接');
+                },
+                error: function (xhr, type, errorThrown) {
+                    mui('#pullrefresh').pullRefresh().refresh(true);
+                    //临时用本地文件填充
+                    var res = json_data;
+
+                    if (res.msg == -1) {
+                        mui.alert("提示", res.msgbox);
+                    } else if (res.msg == 0) {
+                        if (reload) {
+                            mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+                        }
+                        mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+                        mui.alert("提示", res.msgbox);
+                    } else {
+                        $('#' + ul_id).attr('pageIndex', parseInt(ul_page_index) + 1);
+                        // if (res.total == 0) {
+                        //     mui.toast("没有数据");
+                        //     if (reload) {
+                        //         mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+                        //     }
+                        //     mui('#pullrefresh').pullRefresh().endPullupToRefresh(false);
+                        //     return;
+                        // }
+                        //取返回的数据
+                        var html = template($('#' + ul_id).attr('template-id'), res);
+                        //最大页数
+                        totalPage = res.total % pageSize != 0 ? parseInt(res.total / pageSize) + 1 : res.total / pageSize;
+
+                        if (res.data.length == 0) {
+                            $(".mui-pull-bottom-pocket").removeClass("mui-visibility");
+                            $("#div_nomore").show();
+                        } else {
+                            $("#div_nomore").hide();
+                        }
+                        if (reload) {
+                            //覆盖数据                            
+                            $('#' + ul_id).html(html);
+                            mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+                            $(".mui-pull-top-pocket").removeClass("mui-visibility");
+                        } else {
+                            //追加数据
+                            $('#' + ul_id).append(html);
+                        }
+
+                        mui('#pullrefresh').pullRefresh().endPullupToRefresh(totalPage <= ul_page_index);
+
+                        //绑定li点击事件
+                        bindTap();
+                    }
+
+                }
+            });
+        };
+
+        //取消绑定点击事件
+        function unBindTap() {
+            mui('.mui-table-view').off('tap', 'li');
+        }
+
+        //绑定点击事件
+        function bindTap() {
+            mui('.mui-table-view').on('tap', 'li', function (e) {
+                window.open(this.getAttribute("data-link"));
+            });
+        }
+
+        function openModal() {
+            cover.style.display = "block"; //显示遮罩层
+            modal.style.display = "block"; //显示弹出层
+        }
+
+        function closeModal() {
+            cover.style.display = "none"; //隐藏遮罩层
+            modal.style.display = "none"; //隐藏弹出层
+        }
+        var reg_tel = /^1\d{10}$/;
+
+        function goBindTel(btn) {
+            var telphone = $("#input_telphone").val();
+            var vcode = $("#input_code").val();
+            if (telphone.length != 11) {
+                $("#input_telphone").focus()
+                mui.toast("请输入11位手机号");
+                return;
+            }
+            if (!reg_tel.test(telphone)) {
+                $("#input_telphone").focus()
+                mui.toast("手机号码格式不正确");
+                return;
+            }
+            if(vcode.length != 4){
+                $("#input_code").focus()
+                mui.toast("请输入4位验证码");
+                return;
+            }
+            $(btn).attr("disabled", "disabled");
+            $(btn).text("绑定中...");
+        }
+        
+        var timer = 1;
+        function sendVCode(btn) {
+            var telphone = $("#input_telphone").val();
+            if (telphone.length != 11) {
+                $("#input_telphone").focus()
+                mui.toast("请输入11位手机号");
+                return;
+            }
+            if (!reg_tel.test(telphone)) {
+                $("#input_telphone").focus()
+                mui.toast("手机号码格式不正确");
+                return;
+            }
+
+            //17688700150
+            //倒计时 begin
+            if (timer == 1) {
+                timer = 0;
+                var time = 60;
+                $("#input_code").focus()//获取焦点
+                $(btn).removeClass("gcode-befor");
+                $(btn).addClass("gcode-after");
+                $(btn).attr("disabled", "disabled");
+
+                var inter = setInterval(function () {
+                    $(btn).text(time + "s后获取");
+                    time--
+                    if (time < 0) {
+                        timer = 1
+                        clearInterval(inter)
+                        $(btn).removeClass("gcode-after");
+                        $(btn).addClass("gcode-befor");
+                        $(btn).removeAttr("disabled");
+                        $(btn).text("获取验证码");
+                    }
+                }, 1000)
+            }
+            //倒计时 end
+        }
+
+        var json_data = {
+            "msg": 1,
+            "msgbox": "ok",
+            "data": [
+                {
+                    "id": 1,
+                    "is_done": false,
+                    "video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+                    "video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+                    "is_timeout": false,
+                    "title": "正在生成中",
+                    "add_time": "\/Date(1538995104777)\/"
+                },
+                {
+                    "id": 2,
+                    "is_done": true,
+                    "video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+                    "video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+                    "is_timeout": true,
+                    "title": "这个视频已经过期了",
+                    "add_time": "\/Date(1538995104777)\/"
+                },
+                {
+                    "id": 3,
+                    "is_done": true,
+                    "video_src": "http://shop.model-me.cn/uploads/queuef/cb30dc85346b6cb4233f69036cabeedf.mp4",
+                    "video_img": "http://shop.model-me.cn/uploads/queuef/57db9f7a767abaed24b71a3ba24b5e43.jpg",
+                    "is_timeout": false,
+                    "title": "英雄联盟",
+                    "add_time": "\/Date(1538995104777)\/"
+                },
+                {
+                    "id": 4,
+                    "is_done": true,
+                    "video_src": "http://shop.model-me.cn/uploads/queuef/33d5c2fbabb314e526065ca2cd6d45d1.mp4",
+                    "video_img": "http://shop.model-me.cn/uploads/queuef/979e81eb48e44cf6adc0c1c5a1e85704.jpg",
+                    "is_timeout": false,
+                    "title": "为世界杯打CALL",
+                    "add_time": "\/Date(1538994595097)\/"
+                }
+            ],
+            "total": 4
+        };
+
+    </script>
+
+</body>
+
+</html>

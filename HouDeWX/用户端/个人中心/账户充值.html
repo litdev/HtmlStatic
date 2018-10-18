@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<style>
+			.help-text{
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			.help-text img{width:18px; height:18px;}
+			.row-custom{
+				height: 60px !important;
+				line-height: 60px !important;
+			}
+			.row-custom label{
+				line-height: 2 !important;
+			}
+			.row-custom input{
+				height: 60px;
+				line-height: 2 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" onclick="javascript:location.href='升级须知.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-center mui-title">账户充值</h1>
+		</div>
+		
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<p class="help-text"><img src="../../img/icon-info.png"/>&nbsp;&nbsp;首次充值>=1000即可升级为VIP账户</p>
+				<form class="mui-input-group">					
+				    <div class="mui-input-row row-custom">
+				        <label>充值金额</label>
+				        <input type="number" placeholder="请输入金额">
+				    </div>
+				</form>
+				<button type="button" onclick="location.href='账户充值-确认支付.html'" class="mui-btn mui-btn-warning mui-btn-block" style="margin-top: 20px;">前往支付</button>
+			</div>
+		</div>
+		<div class="mui-bar-footer mui-text-center" style="position: fixed; width: 100%;">
+			<p>© 2018 All Rights Reserved</p>
+		</div>
+				
+	</body>
+
+</html>

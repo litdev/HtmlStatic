@@ -1,0 +1,185 @@
+.icon-order-list{
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 5px 0 0 0 !important;
+    background: url(../img/icon-order-list.png) no-repeat;
+    background-size: 100%;
+}
+.icon-order-list:before{
+    content: none !important;
+}
+.search-bar{
+    background-color:#FFF;
+    height: 44px;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 14px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+}
+.search-bar a{
+    color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    height: 100%;
+}
+.jiantou{
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: -7px;
+    margin-left: 10px;
+}
+.sanjiao-kongxin{
+    border:rgba(0, 0, 0, 0.7) solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);   
+}
+/* 箭头向下 */
+.sanjiao-kongxin-down{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);   
+}
+/* 箭头向上 */
+.sanjiao-kongxin-up{
+    margin-top: 4px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.sanjiao-shixin{
+    width: 0px;
+    height: 10px;
+    margin-top: 8px;
+    margin-left: 8px;
+    border: 6px solid;
+    border-color:  rgba(0, 0, 0, 0.5) transparent transparent transparent;
+}
+
+/* 空心--激活 */
+.kongxin-active{
+    color: #66CAEE !important;
+}
+.kongxin-active i{
+    border:#66CAEE solid;
+    border-width: 1px 1px 0 0;
+}
+
+/* 实心---激活 */
+.shixin-active{
+    color: #66CAEE !important;
+}
+.shixin-active i{
+    border: 6px solid;
+    border-color:  #66CAEE transparent transparent transparent;
+}
+
+
+.custom-pullrefresh {
+    top: 102px !important;
+}
+/* .mui-bar-nav~.mui-content .mui-pull-top-pocket{
+    top: 4px !important;
+} */
+
+.mui-table-view{
+    background-color:initial !important;
+}
+.mui-table-view-cell{
+    margin: 10px 0;
+    background-color:#FFF;    
+}
+.mui-table-view-cell:after{
+    height: 0;
+}
+
+.medical-list li{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+    align-content:center;
+    padding: 20px;
+}
+.medical-list li img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: .375rem;
+}
+.medical-item{
+    margin-left: .9375rem;
+    height: 5rem;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+}
+
+.medical-title{
+    display: block;
+    max-width: 13.125rem;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.medical-item div div label{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+}
+.medical-item div div span{
+    font-size: 18px;
+    color: #F5A623;
+    font-weight: bold;
+}
+.medical-old_price{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+
+.mui-popover{
+    padding: 10px;
+}
+
+.search-fild-box{
+    margin-top: 10px;
+}
+.search-fild-box:first{
+    margin-top: 0;
+}
+.search-fild-box label{
+    color: #66CAEE;
+}
+.search-fild-span{
+    padding: 10px 4px;
+    font-size: 16px;
+    line-height: 42px;
+}
+.search-fild-span span{
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #FFF;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 0 6px;
+    line-height: 35px;
+    min-width: 60px;
+    text-align: center;
+}
+.search-fild-span-active{
+    border: 1px solid #66CAEE !important;
+    border-radius: 8px;
+    color: #66CAEE !important;
+}

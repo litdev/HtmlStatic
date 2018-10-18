@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/pubh.css">
+	<link rel="stylesheet" href="../../css/medical.css">
+</head>
+
+<body>
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<button type="button" onclick="javascript:location.href='套餐详情.html'" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+			<span class="mui-icon mui-icon-left-nav"></span>
+		</button>
+		<h1 class="mui-center mui-title">套餐购买</h1>
+	</div>
+
+	<div class="mui-content" style="padding-bottom: 60px;">
+		<div class="m-info-head">
+			<img src="../../img/icon-medical.png" alt="套餐标题">
+			<div class="m-info-head-content">
+				<span>男性基础套餐</span>
+			</div>
+		</div>
+
+		<div class="m-info-content">
+			<div id="slider" class="mui-slider">
+				<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" id="segmented">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							套餐项目
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							体检须知
+						</a>
+
+					</div>
+				</div>
+
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="m-info-view">
+							<div class="m-info-view-title">
+								<i></i>
+								<span>增加项目</span>
+							</div>
+							<div class="m-info-view-content">
+								<ul class="m-info-medical-item" style="display:none;">
+									<li><span>一般检查</span>
+										<p>通过对肝脏酶、蛋白、胆红素的检测，可反映肝细胞的合成功能情况，肝细胞实质受损情况，肝内、外胆道阻塞情况等。</p>
+									</li>
+									<li><span>血脂4项</span>
+										<p>用于评估受检者的脂肪代谢水平及血脂代谢紊乱评价、动脉粥样硬化性疾病危险性预测和营养学评价。</p>
+									</li>
+								</ul>
+								<div class="m-info-medical-add-total" style="display:none;">
+									<label for="">小计：</label>
+									<span class="price">￥2545.00</span>
+								</div>
+								<div class="m-info-medical-add-none">
+									无
+								</div>
+							</div>
+						</div>
+
+						<div class="m-info-view">
+							<div class="m-info-view-title">
+								<i></i>
+								<span>套餐项目（20项）</span>
+							</div>
+							<div class="m-info-view-content">
+								<ul class="m-info-medical-item">
+									<li><span>一般检查</span>
+										<p>身高、体重、腰围、体重指数、身体质量指数检测、血压（BP）、心跳、脉搏等。</p>
+									</li>
+									<li><span>人体身体成分分析</span>
+										<p>反映人体脂肪含量。预防各种高血压、糖尿病、高血脂等。</p>
+									</li>
+									<li><span>内科</span>
+										<p>心肺有无异常，肝脾有无肿大、腹部有无包块等。</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content" style="border-bottom:none;">
+						<div class="m-info-xuzhi">
+							体检前三天，请注意饮食，不要吃过多油腻、不易消化的食物，不酗酒。体检前一日避免进食动物血及内脏，避免剧烈运动，晚餐清淡，晚十点后请勿进食。体检当日请保持空腹，于早上8:30到检，请携带身份证原件，敬候您的光临！
+							<br>
+							<br>
+							体检地址：深圳市福田区金田路4028号荣超经贸中心0312单元
+							<br>
+							客服热线：400 8466 111
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="mui-bar-footer fixed-group-buttom">
+			<div class="bar-left">
+				总金额:<span class="price bigfont">￥1499</span>
+			</div>
+			<div class="bar-right">
+				<button class="mui-btn btn-bule" onclick="javascript:location.href='订单加项.html'">我要加项</button>
+				<button class="mui-btn-yellow" onclick="javascript:location.href='填写预约用户资料.html'">立即购买</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="../../js/mui.min.js"></script>
+	<script>
+		mui.init();
+	</script>
+</body>
+
+</html>
