@@ -30,14 +30,40 @@
             border-radius: 4px;
             outline: none;
         }
+
+        .payok{
+            display: flex;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            justify-content:center;
+            align-items:center;
+            align-content:center;
+        }
+        .payok img{
+            margin-top: 30%;
+            width: 100px;
+        }
+        .span-ok{
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        .span-msg{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
-    <div class="pay-status">
-        <img src="img/icon-PaymentSuccess.png" alt="" style="margin-top: 40%;">
-        <!-- <img src="img/icon-PayFailure.png" alt="" style="margin-top: 20%;">
-        <button>返回重试</button> -->
+    <!-- <div class="pay-status payfail">
+        <img src="img/icon-PayFailure.png" alt="" style="margin-top: 20%;">
+        <button>返回重试</button>
+    </div> -->
+    <div class="pay-status payok">
+        <img src="img/icon-success.png">
+        <span class="span-ok">支付成功！</span>
+        <span class="span-msg">“试镜 · 逗逗拍”已启动 请开始制作您的欢乐视频</span>
     </div>
 </body>
 
