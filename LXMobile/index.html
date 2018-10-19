@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>朗形机构</title>
+    <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body>
+    <div class="menu" style="display: none;">
+        <div class="menu-nav">
+            <div class="menu-nav-search">
+                <span>SEARCH</span>
+                <img onclick="closeRightMenu()" src="img/icon-close.png" alt="">
+            </div>
+            <div class="menu-nav-list">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <img class="icon-logo" src="http://langxing.com.cn/Assets/jf/images/logo.png">
+        <img class="icon-menu" onclick="openRightMenu()" src="img/icon-menu.png" alt="">
+    </header>
+
+    <main class="main-content sub-nav-hero">
+        这里是内容11111 <br>
+        这里是内容2222222 <br>
+        这里是内容 33333<br>
+        这里是内容444444 <br>
+        这里是内容55555555 <br>
+        这里是内容666666 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+        这里是内容 <br>
+    </main>
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+    <script type="text/javascript">
+        var initTop = 0;
+        $(window).scroll(function () {
+            var scrollTop = $(document).scrollTop();
+            if (scrollTop > initTop) {
+                $('.header').addClass('header-hiddened');
+            } else {
+                $('.header').removeClass('header-hiddened');
+            }
+            initTop = scrollTop;
+        });
+
+        function openRightMenu() {
+            // layer.open({
+            //     content: 'hello layer'
+            //     , skin: 'msg'
+            //     , time: 2 //2秒后自动关闭
+            // });
+            layer.open({
+                type: 1,
+                content: $(".menu").html(),
+                anim: 'right',
+                style: 'position:fixed; bottom:0; left:40%; width: 60%; height:100%;border:none;'
+            });
+        }
+
+        function closeRightMenu() {
+            layer.closeAll();
+        }
+    </script>
+</body>
+
+</html>

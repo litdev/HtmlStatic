@@ -1,0 +1,116 @@
+/* 样式重置 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 样式重置结束 */
+
+.header{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color:#000;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    align-content:center;
+}
+.header-hiddened{
+    top: -50px;
+    transition: top .5s;
+}
+.header-showed{
+    top:0;
+    z-index: 9999;
+    transition: top .5s;
+}
+
+
+.header .icon-logo{
+    height: 26px;
+    margin-left: 10px;
+}
+
+.icon-menu{
+    width: 24px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* .layui-m-layer1 .layui-m-layercont{
+    padding: 10px !important;
+} */
+
+.menu{
+    position: relative;
+}
+
+.menu-nav{
+    width: 85%;
+    margin-top: 10px;
+}
+.menu-nav-search{
+    height: 50px;
+    border-bottom: 1px solid #F4F4F4;
+    line-height: 50px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    align-content:center;
+}
+.menu-nav-search img{
+    width: 30px;
+    height: 30px;
+}
+
+.main-content{
+    padding: 60px 10px 10px;
+    overflow: hidden;
+}
