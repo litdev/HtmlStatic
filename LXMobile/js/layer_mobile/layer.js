@@ -147,7 +147,13 @@ Layer.prototype.action = function(config, elem){
   if(config.shade && config.shadeClose){
     var shade = elem[claname]('layui-m-layershade')[0];
     ready.touch(shade, function(){
-      layer.close(that.index, config.end);
+      if(typeof(eval('closeRightMenu')) == 'function'){
+        console.log('找到方法closeRightMenu并执行关闭');
+        closeRightMenu();
+      }else{
+        layer.close(that.index, config.end);
+        console.log('未找到指定方法，关闭指定索引');        
+      }
     });
   }
 
