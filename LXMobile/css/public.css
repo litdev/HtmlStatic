@@ -81,101 +81,137 @@ table {
     margin-left: 10px;
 }
 
-.icon-menu{
-    width: 24px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-/* .layui-m-layer1 .layui-m-layercont{
-    padding: 10px !important;
-} */
-
-.menu{
-    position: relative;
-}
-
-.menu-nav{
-    width: 85%;
-    margin-top: 10px;
-}
-.menu-nav-search{
-    height: 50px;
-    border-bottom: 1px solid #B6B4B6;
-    line-height: 50px;
-    padding-left: 10px;
-    display: flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    justify-content:space-between;
-    align-items:center;
-    align-content:center;
-}
-.menu-nav-search span{
-    display: block;
-    width: 80%;
-}
-.menu-nav-search img{
-    width: 24px;
-    height: 24px;
-}
-
-.main-content{
-    padding-top: 50px;
-    overflow: hidden;
-}
-
-.menu-nav-list ul li{
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #B6B4B6;
-    padding: 0 10px;
-}
-
-.menu-nav-frist-lev li{
-    display: flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    justify-content:space-between;
-    align-items:center;
-    align-content:center;
-    
-}
-.menu-nav-frist-lev li a{
-    display: inline-block;
-    width: 100%;
-}
-.menu-nav-frist-lev li i{
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    transform: rotate(45deg);
-}
-
-.nav-second li a{
+.header .tel-us{
     display: flex;
     flex-direction:row;
     flex-wrap:nowrap;
     justify-content:left;
     align-items:center;
     align-content:center;
+    color: #fff;
 }
-.second-nav-top-back{
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    transform: rotate(-135deg);
-    margin-right: 4px;
+.header .tel-us img{
+    width: 20px;
+    height: 20px;
+    margin-right:2px;
+}
+.header .tel-us span{
+    font-size: 14px;
+    margin-right: 10px;
 }
 
+.main-content{
+    padding: 50px 0;
+}
 .top-banner{
 
 }
 .top-banner img{
     width: 100%;
     height: 170px;
+}
+
+.top-nav{
+    color: #FFF;
+    font-size: 13px;
+    margin-top: -3px;
+    widows: 100%;
+    padding: 5px 0;
+    height: 70px;
+    background-color: #EC2C2A;
+    display: inline;
+    display: -webkit-box;    
+    -webkit-box-orient: horizontal;
+}
+.top-nav-item{
+    width: 20%;
+    -webkit-box-flex: 1;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+}
+.top-nav-item img{
+    widows: 30px;
+    height: 30px;
+}
+.top-nav-item span{
+    margin-top: 7px;
+}
+
+.nav-show-ceng{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+    align-content:center;
+    position: relative;
+}
+.nav-show-ceng i{
+    display: inline-block;
+    width: 0px;
+    margin-top: 12px;
+    margin-left: 4px;
+    border: 6px solid;
+    border-color: #FFF transparent transparent transparent;
+}
+/* 展开 */
+.top-nav-more-i{    
+    margin-top:0 !important;
+    border-color: transparent transparent #FFF transparent !important;
+}
+
+.top-nav-line{
+    display: block;
+    height: 50px;
+    width: 1px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-footer{
+    background-color: #333333;
+    /* min-height: 200px; */
+}
+.foot-up{
+    /* min-height: 120px; */
+    border-bottom: 1px solid #797979;
+}
+.foot-up-nav{
+    height: 50px;
+    line-height: 50px;
+    margin: 10px;
+    border-bottom: 1px solid #797979;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    align-content:center;
+    font-size: 14px;
+}
+.foot-up-nav a{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.foot-up-con{
+    padding: 0 10px;
+    line-height: 25px;
+    padding-bottom: 10px;
+}
+.foot-up-con span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.foot-down{
+    line-height: 20px;
+    padding: 10px;
+}
+.foot-down p{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
 }

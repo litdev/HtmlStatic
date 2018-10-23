@@ -24,20 +24,21 @@
 }
 
 .hezuoqiye{
-    transform: translate3d(10px, 0px, 0px)
+    width: 100%;
+    /* padding: 0 10px; */
 }
 
 .hezuoqiye img{
-    width: 80px;
-    height: 35px;
+    width: 142px;
+    height: 55px;
 }
 .hezuoqiye .swiper-title{
-    margin: 20px 0 !important;
+    margin: 20px 10px !important;
 }
 
-
 .case-box{
-
+    min-height: 200px;
+    margin-top: 20px;
 }
 
 .case-head{
@@ -48,7 +49,7 @@
     justify-content:space-between;
     align-items:center;
     align-content:center;
-    padding: 0 10px;
+    padding: 10px;
 }
 .case-head >span{
     font-size: 20px;
@@ -95,4 +96,5 @@
 }
 .case-list img{
     width: 100%;
+    height: 6.25rem;
 }

@@ -1,55 +1,47 @@
-var initTop = 0;
-//检测页面是向上滑动还是向下滑动
-$(window).scroll(function () {
-    var scrollTop = $(document).scrollTop();
-    if (scrollTop > initTop) {
+// var initTop = 0;
+// //检测页面是向上滑动还是向下滑动
+// $(window).scroll(function () {
+//     var scrollTop = $(document).scrollTop();
+//     if (scrollTop > initTop) {
+//         $('.header').addClass('header-hiddened');
+//     } else {
+//         $('.header').removeClass('header-hiddened');
+//     }
+//     initTop = scrollTop;
+// });
+
+/*判断上下滑动：*/
+$('body').bind('touchstart', function (e) {
+    startX = e.originalEvent.changedTouches[0].pageX;
+    startY = e.originalEvent.changedTouches[0].pageY;
+});
+$("body").bind("touchmove", function (e) {
+    //获取滑动屏幕时的X,Y
+    endX = e.originalEvent.changedTouches[0].pageX;
+    endY = e.originalEvent.changedTouches[0].pageY;
+    //获取滑动距离
+    distanceX = endX - startX;
+    distanceY = endY - startY;
+    //判断滑动方向
+    if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX > 0) {
+        // console.log('往右滑动');
+    } else if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX < 0) {
+        // console.log('往左滑动');
+    } else if (Math.abs(distanceX) < Math.abs(distanceY) && distanceY < 0) {
+        // console.log('往上滑动');
         $('.header').addClass('header-hiddened');
-    } else {
+    } else if (Math.abs(distanceX) < Math.abs(distanceY) && distanceY > 0) {
+        // console.log('往下滑动');
         $('.header').removeClass('header-hiddened');
     }
-    initTop = scrollTop;
-});
-//打开导航菜单
-function openRightMenu() {
-    // layer.open({
-    //     content: 'hello -- layer'
-    //     , skin: 'msg'
-    //     , time: 2 //2秒后自动关闭
-    // });
-    layer.open({
-        type: 1,
-        content: $(".menu").html(),
-        anim: 'right',
-        style: 'position:fixed; bottom:0; left:40%; width: 60%; height:100%;border:none;'
-    });
-}
-//关闭导航菜单
-function closeRightMenu() {
-    $('.nav-second').hide();
-    $('.menu-nav-frist-lev').show();
-    layer.closeAll();
-}
-//显示二级导航
-function showSecondNavList(obj) {
-    var event_val = $(obj).attr("data-event");
-    if (!event_val.startsWith("menu-")) {
-        location.href = event_val;
-        return;
-    }
-
-    //显示UL
-    console.log('显示UL:' + event_val);
-    $(obj).parent().parent().hide();
-    $('.' + event_val).fadeIn(500);
-}
-//显示一级导航
-function showFristNavList(obj) {
-    $(obj).parent().parent().hide();
-    $('.menu-nav-frist-lev').fadeIn(500);
-}
+})
 
 //轮播图Banner
 var swiper_top_banner = new Swiper('.top-banner', {
+    loop : true,
+    lazy: {
+        loadPrevNext: true,
+      },
     pagination: {
         el: '.pagination-top-banner',
         dynamicBullets: true

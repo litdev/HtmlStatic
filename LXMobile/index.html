@@ -13,141 +13,320 @@
 </head>
 
 <body>
-    <div class="menu" style="display: none;">
-        <div class="menu-nav">
-            <div class="menu-nav-search">
-                <span onclick="alert('显示搜索框')">SEARCH</span>
-                <img onclick="closeRightMenu()" src="img/icon-close.png" alt="">
-            </div>
-            <div class="menu-nav-list">
-                <ul class="menu-nav-frist-lev">
-                    <li><a href="javascript:void(0)" onclick="showSecondNavList(this)" data-event="menu-nav-szzs">数字展示</a><i></i></li>
-                    <li><a href="javascript:void(0)" onclick="showSecondNavList(this)" data-event="menu-nav-cysj">创意视觉</a><i></i></li>
-                    <li><a href="javascript:void(0)" onclick="showSecondNavList(this)" data-event="menu-nav-gylx">关于朗形</a><i></i></li>
-                    <li><a href="javascript:void(0)" onclick="showSecondNavList(this)" data-event="menu-nav-lxwm">联系我们</a><i></i></li>
-                </ul>
-
-                <!-- 数字展示 -->
-                <ul class="nav-second menu-nav-szzs" style="display: none;">
-                    <li><a href="javascript:void(0)" onclick="showFristNavList(this)"><i class="second-nav-top-back"></i>数字展示</a></li>
-                    <li><a href="">数字品牌馆</a></li>
-                    <li><a href="">数字楼书系统</a></li>
-                    <li><a href="">数字工程仿真</a></li>
-                </ul>
-                <!-- 创意视觉 -->
-                <ul class="nav-second menu-nav-cysj" style="display: none;">
-                    <li><a href="javascript:void(0)" onclick="showFristNavList(this)"><i class="second-nav-top-back"></i>创意视觉</a></li>
-                    <li><a href="">视觉动画</a></li>
-                    <li><a href="">创意广告</a></li>
-                    <li><a href="">新媒体互动</a></li>
-                    <li><a href="">建筑可视化</a></li>
-                </ul>
-                <!-- 关于朗形 -->
-                <ul class="nav-second menu-nav-gylx" style="display: none;">
-                    <li><a href="javascript:void(0)" onclick="showFristNavList(this)"><i class="second-nav-top-back"></i>关于朗形</a></li>
-                    <li><a href="">公司简介</a></li>
-                    <li><a href="">朗形理念</a></li>
-                    <li><a href="">公司荣誉</a></li>
-                    <li><a href="">大事记</a></li>
-                    <li><a href="">员工风采</a></li>
-                </ul>
-                <!-- 联系我们 -->
-                <ul class="nav-second menu-nav-lxwm" style="display: none;">
-                    <li><a href="javascript:void(0)" onclick="showFristNavList(this)"><i class="second-nav-top-back"></i>联系我们</a></li>
-                    <li><a href="">加入我们</a></li>
-                    <li><a href="">位置导航</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <header class="header">
         <img class="icon-logo" src="http://langxing.com.cn/Assets/jf/images/logo.png">
-        <img class="icon-menu" onclick="openRightMenu()" src="img/icon-menu.png" alt="">
+        <div class="tel-us" onclick="location.href='tel:17688700150';">
+            <img src="img/icon-tel.png" alt="">
+            <span>联系我们</span>
+        </div>
     </header>
 
-    <main class="main-content sub-nav-hero">
+    <main class="main-content">
         <div class="swiper-container top-banner">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a><img src="http://www.langxing.com.cn/uploads/hm/f7254581f82bd2aec8d25d0462f424a9.gif" /></a></div>
-                <div class="swiper-slide"><a><img src="http://www.langxing.com.cn/uploads/hm/0991d4255038e7b13cf61b7c6f44b4ef.jpg" /></a></div>
-                <div class="swiper-slide"><a><img src="http://www.langxing.com.cn/uploads/hm/635208721649ef9b42c560865ba59f8a.jpg" /></a></div>
-                <div class="swiper-slide"><a><img src="http://www.langxing.com.cn/uploads/hm/c9968a3eccab30f14d51e0ee8037d9bc.jpg" /></a></div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://www.langxing.com.cn/uploads/hm/f7254581f82bd2aec8d25d0462f424a9.gif" class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://www.langxing.com.cn/uploads/hm/0991d4255038e7b13cf61b7c6f44b4ef.jpg" class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://www.langxing.com.cn/uploads/hm/635208721649ef9b42c560865ba59f8a.jpg" class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://www.langxing.com.cn/uploads/hm/c9968a3eccab30f14d51e0ee8037d9bc.jpg" class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination pagination-top-banner"></div>
         </div>
 
-        <div class="swiper-container yazhoufeng">
-            <span class="swiper-title">亚洲风</span>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/fae0285f0c5146fcbfdb5b0a815fe96e.jpg" /><span>美景&#183;美境</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/3b99a21c98ef3705ff3e8e551913deec.jpg" /><span>建发&#183;泱誉</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/1e9cd6680e50d89ea70d8b8162a74d5e.jpg" /><span>泰禾&#183;汀溪院子</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/a7fa9d42b2374ccfd609885f2d860a70.jpg" /><span>建发&#183;独墅湾</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/115c267454e2603b83e84d7c02de42e8.jpg" /><span>鑫苑&#183;木莲世家</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/29d9fc6a7b1e3cf7f36d6f55888464c5.jpg" /><span>美景&#183;东望</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/812f31b6485da8dc04e409a5df44d077.jpg" /><span>中联&#183;棠樾</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/8927f3edf350d4e76b5633c66aa59ba9.jpg" /><span>彰泰&#183;乌布小院</span></a></div>
-                <div class="swiper-slide"><a href="http://www.baidu.com"><img src="http://langxing.com.cn/uploads/hm/c34451b40472ddd6fa539f36049aa137.jpg" /><span>彰泰&#183;乌布小镇</span></a></div>
+        <div class="top-nav">
+            <div class="top-nav-item">
+                <img src="img/icon-shijuedonghua.png" alt="">
+                <span>视觉动画</span>
             </div>
-            <!-- Add Pagination -->
+            <i class="top-nav-line"></i>
+            <div class="top-nav-item">
+                <img src="img/icon-shuzippg.png" alt="">
+                <span>实拍广告</span>
+            </div>
+            <i class="top-nav-line"></i>
+            <div class="top-nav-item">
+                <img src="img/icon-shuzippg.png" alt="">
+                <span>数字品牌馆</span>
+            </div>
+            <i class="top-nav-line"></i>
+            <div class="top-nav-item">
+                <img src="img/icon-xmthd.png" alt="">
+                <span>新媒体互动</span>
+            </div>
+            <i class="top-nav-line"></i>
+            <div class="top-nav-item nav-show-ceng">
+                <span>更多</span>
+                <i></i>
+                <!-- <i class="top-nav-more-i"></i> -->
+            </div>
+        </div>
+        <div class="nav-show-list">
+
+        </div>
+
+        <div class="swiper-container yazhoufeng">
+            <span class="swiper-title">新亚洲建筑风</span>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/fae0285f0c5146fcbfdb5b0a815fe96e.jpg"
+                            class="swiper-lazy" /><span>美景&#183;美境</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/3b99a21c98ef3705ff3e8e551913deec.jpg"
+                            class="swiper-lazy" /><span>建发&#183;泱誉</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/1e9cd6680e50d89ea70d8b8162a74d5e.jpg"
+                            class="swiper-lazy" /><span>泰禾&#183;汀溪院子</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/a7fa9d42b2374ccfd609885f2d860a70.jpg"
+                            class="swiper-lazy" /><span>建发&#183;独墅湾</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/115c267454e2603b83e84d7c02de42e8.jpg"
+                            class="swiper-lazy" /><span>鑫苑&#183;木莲世家</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/29d9fc6a7b1e3cf7f36d6f55888464c5.jpg"
+                            class="swiper-lazy" /><span>美景&#183;东望</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/812f31b6485da8dc04e409a5df44d077.jpg"
+                            class="swiper-lazy" /><span>中联&#183;棠樾</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/8927f3edf350d4e76b5633c66aa59ba9.jpg"
+                            class="swiper-lazy" /><span>彰泰&#183;乌布小院</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+
+                <div class="swiper-slide">
+                    <a><img data-src="http://langxing.com.cn/uploads/hm/c34451b40472ddd6fa539f36049aa137.jpg"
+                            class="swiper-lazy" /><span>彰泰&#183;乌布小镇</span></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+
+            </div>
             <div class="swiper-scrollbar scrollbar-yazhoufeng"></div>
         </div>
 
         <div class="swiper-container hezuoqiye">
             <span class="swiper-title">合作企业</span>
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="http://langxing.com.cn/uploads/hm/7fe0b7122426ab2ef584390a30af90f9.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/3.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/4.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/5.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/7.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/6.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/12.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/9.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/22.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/37.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/20.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/31.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/8.png"> </div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/11.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/18.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/34.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/33.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/10.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/25.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/13.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/15.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/14.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/2.png"> </div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/17.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/16.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/19.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/21.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/23.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/24.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/29.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/30.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/26.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/32.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/27.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/28.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/35.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/36.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/38.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/39.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/40.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/41.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/42.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/43.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/44.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/45.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/46.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/47.png"></div>
-                <div class="swiper-slide"><img src="http://langxing.com.cn/Assets/jf/images/index/logoh/48.png"></div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/uploads/hm/7fe0b7122426ab2ef584390a30af90f9.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/3.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/4.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/5.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/7.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/6.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/12.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/9.png "
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/22.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/37.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/20.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/31.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/8.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/11.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/18.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/34.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/33.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/10.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/25.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/13.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/15.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/14.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/2.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/17.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/16.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/19.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/21.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/23.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/24.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/29.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/30.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/26.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/32.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/27.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/28.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/35.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/36.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/38.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/39.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/40.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/41.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/42.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/43.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/44.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/45.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/46.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/47.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide"><a><img data-src="http://langxing.com.cn/Assets/jf/images/index/logoh/48.png"
+                            class="swiper-lazy" /></a>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-scrollbar scrollbar-hezuoqiye"></div>
         </div>
 
@@ -162,13 +341,15 @@
             <ul class="case-list">
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/23a95591352d48cdb72452f1a4a69b80.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/23a95591352d48cdb72452f1a4a69b80.jpg"
+                            alt="">
                         <span>招商·臻园</span>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/fae0285f0c5146fcbfdb5b0a815fe96e.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/fae0285f0c5146fcbfdb5b0a815fe96e.jpg"
+                            alt="">
                         <span>美景·美境</span>
                     </a>
                 </li>
@@ -186,13 +367,15 @@
             <ul class="case-list">
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/2510b80847ad7854cd901c7d033798db.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/2510b80847ad7854cd901c7d033798db.jpg"
+                            alt="">
                         <span>融侨·铂樾府数字化营销体验展厅</span>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/edbd839c65924b3f9642761ac39fd019.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/edbd839c65924b3f9642761ac39fd019.jpg"
+                            alt="">
                         <span>新力·数字品牌馆</span>
                     </a>
                 </li>
@@ -210,7 +393,8 @@
             <ul class="case-list">
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/49173fd2b37765f869e8b130d72fccdc.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/49173fd2b37765f869e8b130d72fccdc.jpg"
+                            alt="">
                         <span>融侨·铂樾府数字楼书系统</span>
                     </a>
                 </li>
@@ -234,13 +418,15 @@
             <ul class="case-list">
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/aaa3b6b0daa4f43e53da7ada039ceee9.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/aaa3b6b0daa4f43e53da7ada039ceee9.jpg"
+                            alt="">
                         <span>招商·轻奢样板房VR体验</span>
                     </a>
                 </li>
                 <li>
                     <a>
-                        <img src="http://langxing.com.cn/uploads/hm/af5d1cc53e708c69e3c82611a0e63198.jpg" alt="">
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/af5d1cc53e708c69e3c82611a0e63198.jpg"
+                            alt="">
                         <span>金域蓝城VR全景体验</span>
                     </a>
                 </li>
@@ -248,57 +434,94 @@
         </div>
 
         <div class="case-box">
-                <div class="case-head">
-                    <span>实拍广告最新案例</span>
-                    <div class="case-head-right">
-                        <span>更多</span>
-                        <i></i>
-                    </div>
+            <div class="case-head">
+                <span>实拍广告最新案例</span>
+                <div class="case-head-right">
+                    <span>更多</span>
+                    <i></i>
                 </div>
-                <ul class="case-list">
-                    <li>
-                        <a>
-                            <img src="http://langxing.com.cn/uploads/hm/bc132d70c0ccc7d2eba1915a543d47b9.jpg" alt="">
-                            <span>朗泓·龙园大观</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <img src="http://langxing.com.cn/uploads/hm/4d005d7bafafa4b1b9be163634a32e4c.jpg" alt="">
-                            <span>中航·元屿海</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
+            <ul class="case-list">
+                <li>
+                    <a>
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/bc132d70c0ccc7d2eba1915a543d47b9.jpg"
+                            alt="">
+                        <span>朗泓·龙园大观</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <img class="lazyload" data-original="http://langxing.com.cn/uploads/hm/4d005d7bafafa4b1b9be163634a32e4c.jpg"
+                            alt="">
+                        <span>中航·元屿海</span>
+                    </a>
+                </li>
+            </ul>
 
-            <div class="" style="height: 100px;">
-                dfasd
-            </div>
+        </div>
+
 
     </main>
 
+    <footer class="main-footer">
+        <div class="foot-up">
+            <div class="foot-up-nav">
+                <a>关于朗形</a>
+                <a>数字展示</a>
+                <a>创意视觉</a>
+                <a>加入我们</a>
+                <a>员工风采</a>
+            </div>
+            <div class="foot-up-con">
+                <span>TEL：0755-86102510/89629333</span>
+                <span>E-mail：landsky2018@langxing.com.cn</span>
+                <span>ADD：广东省深圳市福田区中国新媒体广告园13F(福田体育公园综合楼)</span>
+            </div>
+        </div>
+
+        <div class="foot-down">
+            <p>朗形机构Copyright(C)2006-2018 All Rights Reserved 粤ICP备14045727号</p>
+        </div>
+
+    </footer>
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/Swiper/4.4.1/js/swiper.min.js"></script>
-    <script src="js/layer_mobile/layer.js"></script>
     <script src="js/public.js"></script>
+    <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
     <script type="text/javascript">
+        $(function () {
+            $("img.lazyload").lazyload();
+        })
+
         var swiper_yazhoufeng = new Swiper('.yazhoufeng', {
+            lazy: {
+                loadPrevNext: true,
+            },
             slidesPerView: 3.2,
             spaceBetween: 0,
             scrollbar: {
                 el: '.scrollbar-yazhoufeng',
             },
+
         });
 
         var swiper_hezuoqiye = new Swiper('.hezuoqiye', {
-            slidesPerView: 4.1,
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            slidesPerView: 2.4,
             slidesPerColumn: 4,
-            spaceBetween: 10,
+            slidesPerColumnFill: 'row',
+            // spaceBetween: 10,
             scrollbar: {
                 el: '.scrollbar-hezuoqiye',
             },
+            lazy: {
+                loadPrevNext: true,
+            },
         });
+
+
     </script>
 </body>
 
