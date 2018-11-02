@@ -22,10 +22,13 @@
     align-content:center;
 }
 .ctop span{
-    font-size: 14px;
+    font-size: 1.0625rem;
     display: block;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.75);
+}
+.ctop span i{
+    color: red;
 }
 .ctop .cclabel{
     display: block;
@@ -38,7 +41,7 @@
     width: 72%;
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
+    font-size: 18px;
     height: 43px;
     outline: none;
     background: url(../img/btn_downloadLink_big_n.png) no-repeat;
