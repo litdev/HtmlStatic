@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>调查问卷</title>
+    <link rel="stylesheet" href="css/survey.css">
+</head>
+
+<body>
+    <div class="ctop"></div>
+    <div class="card-block">
+        <div class="card">
+            <div class="card-title">您对什么类型的片子满意?</div>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input id="ra_mv_gaoxiao" type="radio" name="ramvtype" value="搞笑类" checked>
+                    <label for="ra_mv_gaoxiao">搞笑类</label>
+                </div>
+                <div class="radio-item">
+                    <input id="ra_mv_zhufu" type="radio" name="ramvtype" value="祝福类">
+                    <label for="ra_mv_zhufu">祝福类</label>
+                </div>
+                <div class="radio-item">
+                    <input id="ra_mv_dianying" type="radio" name="ramvtype" value="电影类">
+                    <label for="ra_mv_dianying">电影类</label>
+                </div>
+                <div class="radio-item">
+                    <input id="ra_mv_qinzi" type="radio" name="ramvtype" value="亲子类">
+                    <label for="ra_mv_qinzi">亲子类</label>
+                </div>
+                <div class="radio-item">
+                    <input id="ra_mv_qita" type="radio" name="ramvtype" value="其他">
+                    <label for="ra_mv_qita">其他</label>
+                    <input type="text" maxlength="10">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">功能异常</div>
+            <textarea name="txt_gnyc" id="txt_gnyc" cols="30" rows="4" placeholder="现有功能无法正常使用"></textarea>
+            <div class="card-title-er">
+                <label>添加图片</label>
+                <span>(提供问题截图)</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">产品建议</div>
+        </div>
+        <div class="card">
+            <div class="card-title">您的联系方式</div>
+        </div>
+    </div>
+</body>
+
+</html>
