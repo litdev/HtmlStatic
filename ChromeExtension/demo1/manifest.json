@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Demo1",
+    "version": "1.0.0",
+    "description": "学习开发Chrome拓展",
+    "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "page_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "我是pageAction",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "declarativeContent"
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*"
+            ],
+            "js": [
+                "js/jquery.min.js",
+                "js/content-script.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}

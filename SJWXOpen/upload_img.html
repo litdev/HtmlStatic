@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>手机传图定制纪念卡</title>
+    <link rel="stylesheet" href="css/uploadimg.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box-upload">
+            <div class="upload">
+                <input type="file" id="hid_file_con" accept="image/*" style="display:none;" />
+                <img class="icon-img-add" onclick="selectImg()" src="img/IconBtn_AddPic@2x.png" alt="add" />
+                <img style="display:none;" class="user-img" src="" alt="">
+            </div>
+        </div>
+        <div class="box-remark">
+            <img src="img/PicText@2x.png" alt="" width="50%">
+        </div>
+        <div class="box-tools">
+            <button class="btn-add" onclick="selectImg()"></button>
+            <button class="btn-readd" onclick="selectImg()" style="display:none;"></button>
+            <button class="btn-upload" onclick="upload()" style="display:none;"></button>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://shop.model-me.cn/Assets/h5/js/layer_mobile/layer.js"></script>
+
+    <script>
+        function showScUp(img_path) {
+            $(".icon-img-add").hide();
+            $(".user-img").show();
+            $(".user-img").attr("src", img_path);
+            $(".btn-add").hide();
+            $(".btn-readd").show();
+            $(".btn-upload").show();
+        }
+
+        function showLocalImg() {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.user-img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(document.getElementById('hid_file_con').files[0]);
+        }
+
+        function selectImg() {
+            $("#hid_file_con").click();
+        }
+        $("#hid_file_con").on("change", function () {
+            var filePath = $(this).val().toLowerCase();
+            if (filePath.indexOf("jpg") != -1 || filePath.indexOf("png") != -1 || filePath.indexOf("jpeg") != -1) {
+                var arr = filePath.split('\\');
+                var fileName = arr[arr.length - 1];
+                //本地显示选择的图片
+                showLocalImg();
+                //显示操作按钮
+                showScUp(filePath);
+            } else {
+                layer.open({
+                    content: "选择的图片格式有误"
+                    , skin: 'msg'
+                    , time: 3
+                });
+                return false
+            }
+        })
+
+        function upload() {
+            layer.open({
+                type: 2,
+                content: '图片上传中...',
+                shadeClose:false
+            });
+
+            window.setTimeout(function () {
+                layer.closeAll()
+            },3000);
+
+            return;
+            var fd = new FormData();
+            fd.append("FileData", document.getElementById('hid_file_con').files[0]);
+            $.ajax({
+                url: '/MP/Tools/UploadAvatar',
+                type: 'POST',
+                cache: false,
+                contentType: "multipart/form-data",
+                data: fd,
+                processData: false,
+                contentType: false
+            }).done(function (res) {
+                mui.hideLoading();
+                if (res.msg == 1) {
+                    $("#head-img").attr("src", res.data);
+                } else {
+                    alert(res.msgbox);
+                }
+            }).fail(function (res) {
+                mui.alert("发生错误", "请稍后重试");
+            });
+        }
+    </script>
+
+</body>
+
+</html>

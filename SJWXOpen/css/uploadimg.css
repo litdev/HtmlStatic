@@ -1,0 +1,73 @@
+body{
+    font-size: 16px;
+    line-height:16px;
+    font-weight:400;
+    margin: 0;
+    /* background:linear-gradient(222deg,rgba(255,237,33,1) 0%,rgba(252,156,0,1) 100%); */
+}
+
+.container{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background:linear-gradient(222deg,rgba(255,237,33,1) 0%,rgba(252,156,0,1) 100%);
+    text-align:center;
+}
+
+.box-upload{
+    width: 100%;
+    min-height: 450px;
+    background: transparent;
+}
+.upload{
+    background: rgba(255,255,255,1);
+    /* opacity:0.8; */
+    height: 450px;  
+    margin: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+    overflow: hidden;
+}
+
+.icon-img-add{
+    width: 60px;
+    height: 72px;
+}
+
+.user-img{
+    max-width: 450px;
+}
+
+
+.box-tools{
+    display: flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+    padding: 20px;
+}
+
+.box-tools button{
+    border: 0;
+    margin-top: 10px;
+    height: 60px;
+    width: 100%;
+    background-size: 100%;    
+}
+
+.btn-add{
+    background: url(../img/TextBtn_AddPic@2x.png) no-repeat;
+}
+.btn-readd{
+    background: url(../img/TextBtn_ReAddPic@2x.png) no-repeat;
+}
+.btn-upload{
+    background: url(../img/TextBtn_UploadPic@2x.png) no-repeat;
+}

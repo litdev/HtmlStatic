@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>微信支付</title>
+    <style>
+        .pay-status {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .pay-status img {
+            width: 90%;
+        }
+
+        button {
+            margin-top: 25px;
+            background-color: #FF6F00;
+            color: #FFF;
+            font-size: 1.25rem;
+            border: none;
+            width: 90%;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .payok {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .payok img {
+            margin-top: 30%;
+            width: 100px;
+        }
+
+        .span-ok {
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        .span-msg {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .payok a{
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="pay-status payfail">
+        <img src="img/icon-PayFailure.png" alt="" style="margin-top: 20%;">
+        <button>返回重试</button>
+    </div> -->
+    <!-- <div class="pay-status payok">
+        <img src="img/icon-success.png">
+        <span class="span-ok">支付成功！</span>
+        <span class="span-msg">请在大屏幕上选择操作</span>
+    </div> -->
+    <div class="pay-status payok">
+        <img src="img/icon-success.png">
+        <span class="span-ok">支付成功！</span>
+        <span class="span-msg"><span id="span_miao">3</span>秒后跳转手机传图页面</span>
+        <a id="a_link" href="http://www.baidu.com">立即跳转</a>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //设定倒数秒数
+        var t = 3;
+        //显示倒数秒数
+        function showTime(){
+            t -= 1;
+            document.getElementById('span_miao').innerText= t;
+            if(t==0){
+                location.href=$("#a_link").attr("href");
+            }
+            //每秒执行一次,showTime()
+            setTimeout("showTime()",1000);
+        }
+ 
+        $(function () {
+            showTime();
+        })
+    </script>
+</body>
+
+</html>
