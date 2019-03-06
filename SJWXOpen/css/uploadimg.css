@@ -16,13 +16,13 @@ body{
 
 .box-upload{
     width: 100%;
-    min-height: 450px;
+    min-height: 380px;
     background: transparent;
 }
 .upload{
     background: rgba(255,255,255,1);
     /* opacity:0.8; */
-    height: 450px;  
+    height: 380px;  
     margin: 20px;
     border-radius: 4px;
     display: flex;
@@ -40,7 +40,7 @@ body{
 }
 
 .user-img{
-    max-width: 450px;
+    max-width: 380px;
 }
 
 
@@ -56,8 +56,8 @@ body{
 
 .box-tools button{
     border: 0;
-    margin-top: 10px;
-    height: 60px;
+    /* margin-top: 10px; */
+    height: 70px;
     width: 100%;
     background-size: 100%;    
 }
