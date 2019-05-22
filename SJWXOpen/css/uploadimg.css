@@ -16,13 +16,13 @@ body{
 
 .box-upload{
     width: 100%;
-    min-height: 380px;
+    min-height: 320px;
     background: transparent;
 }
 .upload{
     background: rgba(255,255,255,1);
     /* opacity:0.8; */
-    height: 380px;  
+    height: 320px;  
     margin: 20px;
     border-radius: 4px;
     display: flex;
