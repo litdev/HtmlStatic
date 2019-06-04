@@ -61,7 +61,11 @@ body{
     width: 100%;
     background-size: 100%;    
 }
-
+.up-tips{
+    color: #f30000;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
 .btn-add{
     background: url(../img/TextBtn_AddPic@2x.png) no-repeat;
 }
